@@ -13,7 +13,10 @@
         android:theme="@style/Theme.MakeTeam_app"
         tools:targetApi="31">
         <activity
-            android:name=".view.user.membership_fragment"
+            android:name=".view.user.membership_fragment_setting_school"
+            android:exported="false" />
+        <activity
+            android:name=".view.user.membership_fragment_setting_name"
             android:exported="false" />
         <activity
             android:name=".view.login_fragment"

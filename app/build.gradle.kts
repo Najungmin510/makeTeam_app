@@ -48,6 +48,7 @@ dependencies {
     val fragmentVersion = "1.6.2"
     val CoroutineVersion = "1.3.9"
     val navVersion = "2.7.7"
+    val kakaoVersion = "2.20.1"
 
 
     implementation(libs.androidx.core.ktx)
@@ -72,6 +73,6 @@ dependencies {
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
-
+    implementation ("com.kakao.sdk:v2-user:$kakaoVersion")
 
 }

@@ -12,4 +12,11 @@
     <!--텍스트 색-->
     <color name="text_gray">#FF636363</color>
     <color name="text_gray_light">#FFB3B3B3</color>
+    <color name="text_gray_blue">#FF687684</color>
+    <color name="text_green">#FF4CAF50</color>
+
+
+    <!--도형 배경 색-->
+    <color name="background_green">#FFB7DFB9</color>
+    <color name="background_gray">#FFB0B0B0</color>
 </resources>

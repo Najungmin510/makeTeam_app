@@ -3,11 +3,7 @@
 
     <item
         android:id="@+id/home"
-        android:title = "홈"/>
-
-    <item
-        android:id="@+id/board"
-        android:title="글쓰기"/>
+        android:title="홈"/>
 
     <item
         android:id="@+id/notice"

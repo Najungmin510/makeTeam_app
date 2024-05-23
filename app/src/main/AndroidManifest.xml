@@ -16,29 +16,19 @@
         android:theme="@style/Theme.MakeTeam_app"
         tools:targetApi="31">
         <activity
-            android:name=".view.user.membership_fragment_success"
-            android:exported="false" />
-        <activity
-            android:name=".view.user.membership_fragment_setting_sch_inform"
-            android:exported="false" />
-        <activity
-            android:name=".view.user.membership_fragment_setting_school"
-            android:exported="false" />
-        <activity
-            android:name=".view.user.membership_fragment_setting_name"
-            android:exported="false" />
-        <activity
             android:name=".view.login_fragment"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -53,6 +43,6 @@
                     android:scheme="kakao87a433ac0f324bdc908ff8636bce1a72" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>

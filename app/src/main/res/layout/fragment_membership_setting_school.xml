@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/project_white"
-    tools:context=".view.user.membership_fragment_setting_school">
+    tools:context=".view.user.fragment_membership_setting_school">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton"

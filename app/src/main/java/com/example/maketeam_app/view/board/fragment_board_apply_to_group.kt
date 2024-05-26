@@ -1,4 +1,4 @@
-package com.example.maketeam_app.view.user
+package com.example.maketeam_app.view.board
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,11 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.maketeam_app.R
 
-class membership_fragment_setting_sch_inform : AppCompatActivity() {
+class fragment_board_apply_to_group : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.fragment_membership_setting_sch_inform)
+        setContentView(R.layout.fragment_board_apply_to_group)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

@@ -24,7 +24,5 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.itemIconTintList = null
 
 
-
-
     }
 }

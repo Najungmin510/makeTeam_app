@@ -1,19 +1,14 @@
 package com.example.maketeam_app.view.user
 
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Spannable
-import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.maketeam_app.R
 import com.example.maketeam_app.databinding.FragmentMembershipSettingSchoolBinding
 
-class membership_fragment_setting_school : AppCompatActivity() {
+class fragment_membership_setting_school : AppCompatActivity() {
 
     private lateinit var binding : FragmentMembershipSettingSchoolBinding
     override fun onCreate(savedInstanceState: Bundle?) {

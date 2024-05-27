@@ -1,4 +1,4 @@
-package com.example.maketeam_app.view.board
+package com.example.maketeam_app.view.board.apply
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

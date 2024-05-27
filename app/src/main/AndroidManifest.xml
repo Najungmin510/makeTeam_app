@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MakeTeam_app"
         tools:targetApi="31">
         <activity
-            android:name=".view.board.fragment_board_apply_to_group"
+            android:name=".view.board.apply.fragment_board_apply_to_group"
             android:exported="false" />
         <activity
             android:name=".view.board.fragment_write_new_board"

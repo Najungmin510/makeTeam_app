@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -74,6 +75,8 @@ dependencies {
     //Navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    //kakao login
     implementation ("com.kakao.sdk:v2-user:$kakaoVersion")
 
     //mpchart

@@ -6,16 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.maketeam_app.R
+import com.example.maketeam_app.base.BaseFragment
+import com.example.maketeam_app.databinding.FragmentWriteNewBoardBinding
 
-class fragment_write_new_board : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.fragment_write_new_board)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+class fragment_write_new_board : BaseFragment<FragmentWriteNewBoardBinding>(R.layout.fragment_write_new_board) {
+    override fun initView() {
+
     }
+
+    override fun initClick() {
+
+    }
+
 }

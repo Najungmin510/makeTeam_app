@@ -6,16 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.maketeam_app.R
+import com.example.maketeam_app.base.BaseFragment
+import com.example.maketeam_app.databinding.FragmentMemberSettingNameBinding
+import com.example.maketeam_app.databinding.FragmentMembershipSettingSchInformBindingImpl
 
-class fragment_membership_setting_name : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.fragment_member_setting_name)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+class fragment_membership_setting_name : BaseFragment<FragmentMemberSettingNameBinding>(R.layout.fragment_member_setting_name) {
+    override fun initView() {
+
     }
+
+    override fun initClick() {
+
+    }
+
 }

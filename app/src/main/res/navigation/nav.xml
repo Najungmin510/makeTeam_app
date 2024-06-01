@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/login_fragment">
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.maketeam_app.view.login_fragment"
+        android:label="login_fragment" >
+        <action
+            android:id="@+id/action_login_fragment_to_fragment_membership_setting_name"
+            app:destination="@id/fragment_membership_setting_name" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_membership_setting_name"
+        android:name="com.example.maketeam_app.view.user.fragment_membership_setting_name"
+        android:label="fragment_membership_setting_name" >
+        <action
+            android:id="@+id/action_fragment_membership_setting_name_to_fragment_membership_setting_school"
+            app:destination="@id/fragment_membership_setting_school" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_membership_setting_school"
+        android:name="com.example.maketeam_app.view.user.fragment_membership_setting_school"
+        android:label="fragment_membership_setting_school" >
+        <action
+            android:id="@+id/action_fragment_membership_setting_school_to_fragment_membership_setting_sch_inform"
+            app:destination="@id/fragment_membership_setting_sch_inform" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_membership_setting_sch_inform"
+        android:name="com.example.maketeam_app.view.user.fragment_membership_setting_sch_inform"
+        android:label="fragment_membership_setting_sch_inform" >
+        <action
+            android:id="@+id/action_fragment_membership_setting_sch_inform_to_fragment_membership_success"
+            app:destination="@id/fragment_membership_success" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_membership_success"
+        android:name="com.example.maketeam_app.view.user.fragment_membership_success"
+        android:label="fragment_membership_success" >
+        <action
+            android:id="@+id/action_fragment_membership_success_to_home_fragment_school_main"
+            app:destination="@id/home_fragment_school_main" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_fragment_school_main"
+        android:name="com.example.maketeam_app.view.home.home_fragment_school_main"
+        android:label="home_fragment_school_main" >
+        <action
+            android:id="@+id/action_home_fragment_school_main_to_home_fragment_contest_main"
+            app:destination="@id/home_fragment_contest_main" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_fragment_contest_main"
+        android:name="com.example.maketeam_app.view.home.home_fragment_contest_main"
+        android:label="home_fragment_contest_main" >
+        <action
+            android:id="@+id/action_home_fragment_contest_main_to_home_fragment_school_main"
+            app:destination="@id/home_fragment_school_main" />
+    </fragment>
 
 </navigation>

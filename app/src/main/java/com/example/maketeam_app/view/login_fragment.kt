@@ -6,6 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.fragment.findNavController
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.base.BaseFragment
 import com.example.maketeam_app.databinding.FragmentLoginBinding
@@ -17,7 +19,9 @@ import com.kakao.sdk.user.UserApiClient
 class login_fragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login) {
 
     override fun initView() {
-
+        Log.d("login", "로그인화면 진입")
+        (requireActivity() as MainActivity).noShowTabLayout()
+        (requireActivity() as MainActivity).noShowNavigation()
     }
 
     override fun initClick() {
@@ -45,6 +49,7 @@ class login_fragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_logi
 
                         UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
                     } else if (token != null) {
+                        findNavController().navigate(R.id.action_login_fragment_to_fragment_membership_setting_name)
                         Log.d("login","카카오톡으로 로그인 성공")
                     }
                 }

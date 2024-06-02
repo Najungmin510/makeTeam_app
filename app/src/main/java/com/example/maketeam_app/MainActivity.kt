@@ -30,14 +30,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navControllerSetting(){
-        val navHostFragment = supportFragmentManager.
-        findFragmentById(R.id.container_fragment) as NavHostFragment
-
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         val navController = navHostFragment.navController
+        binding.bottomNav.setupWithNavController(navController)
 
-        val bottomNavigationView = binding.bottomNav
-        bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNav.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> {
+                    navController.navigate(R.id.home_fragment_school_main)
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
     }
+
 
     fun noShowNavigation(){
         binding.bottomNav.visibility = View.GONE
@@ -45,5 +51,13 @@ class MainActivity : AppCompatActivity() {
 
     fun noShowTabLayout(){
         binding.tabLayoutMain.visibility = View.GONE
+    }
+
+    fun showNavigation(){
+        binding.bottomNav.visibility = View.VISIBLE
+    }
+
+    fun showTabLayout(){
+        binding.tabLayoutMain.visibility = View.VISIBLE
     }
 }

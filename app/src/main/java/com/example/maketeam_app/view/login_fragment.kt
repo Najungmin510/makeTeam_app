@@ -2,6 +2,7 @@ package com.example.maketeam_app.view
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -49,6 +50,7 @@ class login_fragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_logi
 
                         UserApiClient.instance.loginWithKakaoAccount(requireContext(), callback = callback)
                     } else if (token != null) {
+                        Toast.makeText(requireContext(), "카카오로 로그인 성공", Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.action_login_fragment_to_fragment_membership_setting_name)
                         Log.d("login","카카오톡으로 로그인 성공")
                     }

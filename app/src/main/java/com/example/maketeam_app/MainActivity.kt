@@ -45,6 +45,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * 탭 레이아웃 & 하단 바텀 네비게이션 안보이게 할 때 쓰는 함수에요
+     * (requireActicity() as MainActicity).함수명 입력하심 사용할 수 있어요
+     * */
+
     fun noShowNavigation(){
         binding.bottomNav.visibility = View.GONE
     }

@@ -11,11 +11,11 @@ import com.example.maketeam_app.databinding.FragmentBoardDetailBinding
 
 class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.fragment_board_detail) {
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initClick() {
-        TODO("Not yet implemented")
+
     }
 
 }

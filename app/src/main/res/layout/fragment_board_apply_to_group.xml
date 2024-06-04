@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<ScrollView
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/project_white"
-    tools:context=".view.board.apply.fragment_board_apply_to_group">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/include_board_apply_mymessage"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/project_white"
+            android:layout_weight="1"
+            tools:context=".view.board.apply.fragment_board_apply_to_group">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/include_board_apply_myinfo"/>
+
+                <include
+                    layout="@layout/include_board_apply_myposition"/>
+
+                <include
+                    layout="@layout/include_board_apply_mymessage"/>
+
+            </LinearLayout>
+        </ScrollView>
 
         <include
             layout="@layout/include_board_apply_send_btn"/>
 
-
-
     </LinearLayout>
-</ScrollView>
 </layout>

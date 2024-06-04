@@ -15,9 +15,11 @@
     <color name="text_gray_blue">#FF687684</color>
     <color name="text_green">#FF4CAF50</color>
 
-
     <!--도형 배경 색-->
     <color name="background_green">#FFB7DFB9</color>
     <color name="background_gray">#FFB0B0B0</color>
     <color name="background_light_gray">#E8E8E8</color>
+
+    <!--텍스트 배경 색-->
+    <color name = "background_text_gray">#81EBEBEB</color>
 </resources>

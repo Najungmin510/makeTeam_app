@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
 }
 
 android {
@@ -51,6 +52,7 @@ dependencies {
     val navVersion = "2.7.7"
     val kakaoVersion = "2.20.1"
     val mpCharVersion = "v3.1.0"
+    val hiltVersion = "2.48"
 
 
     implementation(libs.androidx.core.ktx)
@@ -81,4 +83,8 @@ dependencies {
 
     //mpchart
     implementation ("com.github.PhilJay:MPAndroidChart:$mpCharVersion")
+
+    //hilt
+    implementation ("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
 }

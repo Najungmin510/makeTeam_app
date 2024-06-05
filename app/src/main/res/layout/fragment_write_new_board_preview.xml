@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/project_white"
+    android:orientation="vertical"
+    tools:context=".view.board.write.fragment_write_new_board_preview">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/group_board_detail_content"
+                layout="@layout/include_board_detail_content" />
+
+            <include
+                android:id="@+id/group_board_detail_position"
+                layout="@layout/include_board_detail_position" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_upload_new_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="업로드"
+        android:background="@drawable/background_btn_red"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_gravity="bottom"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:layout_marginHorizontal="10dp"/>
+</LinearLayout>
+</layout>

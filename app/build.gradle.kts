@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -53,6 +54,7 @@ dependencies {
     val kakaoVersion = "2.20.1"
     val mpCharVersion = "v3.1.0"
     val hiltVersion = "2.48"
+    val roomVersion = "2.6.1"
 
 
     implementation(libs.androidx.core.ktx)
@@ -87,4 +89,9 @@ dependencies {
     //hilt
     implementation ("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    //roomDB
+    implementation("androidx.room:room-runtime:$roomVersion")
+    //annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
 }

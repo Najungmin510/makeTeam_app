@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
+    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
 }
 
@@ -55,7 +56,8 @@ dependencies {
     val mpCharVersion = "v3.1.0"
     val hiltVersion = "2.48"
     val roomVersion = "2.6.1"
-
+    val moshiVersion ="1.15.1"
+    val gsonVersion = "2.10.1"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -92,6 +94,15 @@ dependencies {
 
     //roomDB
     implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
     //annotationProcessor("androidx.room:room-compiler:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
+
+
+    //gson
+    implementation("com.google.code.gson:gson:$gsonVersion")
+
+    //Moshi
+    //implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+    //ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
 }

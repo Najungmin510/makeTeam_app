@@ -13,18 +13,23 @@
         android:id="@+id/tab_layout_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/white"
+        app:tabTextAppearance="@style/tabLayout"
+        app:tabSelectedTextColor="@color/main_color"
+        app:tabIndicatorColor="@color/main_color"
+        app:tabGravity="fill">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="한림대학교"
-            app:tabIndicatorColor="@color/main_color"/>
+            app:tabIndicatorGravity="stretch"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="공모전"/>
+            android:text="공모전"
+            app:tabIndicatorGravity="stretch"/>
 
     </com.google.android.material.tabs.TabLayout>
 

@@ -1,4 +1,4 @@
-package com.example.maketeam_app.view
+package com.example.maketeam_app.view.login
 
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +23,7 @@ class login_fragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_logi
         Log.d("login", "로그인화면 진입")
         (requireActivity() as MainActivity).noShowTabLayout()
         (requireActivity() as MainActivity).noShowNavigation()
+
     }
 
     override fun initClick() {

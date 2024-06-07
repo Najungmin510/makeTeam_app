@@ -45,7 +45,9 @@ class fragment_membership_setting_sch_inform : BaseFragment<FragmentMembershipSe
                 number = if(binding.etUserNum.text.toString().isEmpty()){
                     binding.etLayoutUserNum.error ="값을 입력해주세요."
                     false
-
+                } else if(binding.etUserNum.text.toString().length < 8){
+                    binding.etLayoutUserNum.error ="학번은 8자리로 입력해주세요."
+                    false
                 } else {
                     binding.etLayoutUserNum.error = null
                     true

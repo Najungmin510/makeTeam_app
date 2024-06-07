@@ -13,7 +13,7 @@ class home_fragment_school_main : BaseFragment<FragmentHomeMainBinding>(R.layout
     }
 
     override fun initClick() {
-        binding.btnWriteNewBoard.setOnClickListener {
+        binding.btnWriteNewBoardSchool.setOnClickListener {
             findNavController().navigate(R.id.action_home_fragment_school_main_to_fragment_write_new_board)
         }
     }

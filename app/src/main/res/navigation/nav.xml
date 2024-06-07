@@ -6,7 +6,7 @@
     app:startDestination="@id/login_fragment">
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.example.maketeam_app.view.login_fragment"
+        android:name="com.example.maketeam_app.view.login.login_fragment"
         android:label="login_fragment" >
         <action
             android:id="@+id/action_login_fragment_to_fragment_membership_setting_name"
@@ -72,9 +72,10 @@
             android:id="@+id/action_home_fragment_contest_main_to_fragment_write_new_board"
             app:destination="@id/fragment_write_new_board" />
     </fragment>
+
     <fragment
         android:id="@+id/fragment_write_new_board"
-        android:name="com.example.maketeam_app.view.board.fragment_write_new_board"
+        android:name="com.example.maketeam_app.view.board.write.fragment_write_new_board"
         android:label="fragment_write_new_board" >
         <action
             android:id="@+id/action_fragment_write_new_board_to_home_fragment_contest_main"
@@ -82,6 +83,38 @@
         <action
             android:id="@+id/action_fragment_write_new_board_to_home_fragment_school_main"
             app:destination="@id/home_fragment_school_main" />
+        <action
+            android:id="@+id/action_fragment_write_new_board_to_fragment_write_new_board_detail"
+            app:destination="@id/fragment_write_new_board_detail" />
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue=""/>
+
+        <argument
+            android:name="content"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_write_new_board_detail"
+        android:name="com.example.maketeam_app.view.board.write.fragment_write_new_board_detail"
+        android:label="fragment_write_new_board_detail" >
+        <action
+            android:id="@+id/action_fragment_write_new_board_detail_to_fragment_write_new_board"
+            app:destination="@id/fragment_write_new_board" />
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue=""/>
+
+        <argument
+            android:name="content"
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
 
 </navigation>

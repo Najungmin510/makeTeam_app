@@ -18,6 +18,10 @@ interface DBDao {
     @Update
     suspend fun updateBoard(boardContent: BoardContent)
 
-    @Query("SELECT * FROM boardcontent")
-    fun getAll() : LiveData<List<BoardContent>>
+    /**
+     * 0: 학교 게시판 내용만 가져옴
+     * 1: 공모전 게시판 내용만 가져옴
+     * */
+    @Query("SELECT * FROM boardcontent WHERE goal = :n")
+    fun getAll(n : Int) : LiveData<List<BoardContent>>
 }

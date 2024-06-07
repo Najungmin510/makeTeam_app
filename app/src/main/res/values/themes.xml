@@ -7,4 +7,20 @@
     </style>
 
     <style name="Theme.MakeTeam_app" parent="Base.Theme.MakeTeam_app" />
+
+    <style name = "TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--바깥 상자 부분 커스텀-->
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="errorEnabled">true</item>
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="hintTextColor">@color/black</item>
+        <!--오류 부분 커스텀-->
+        <item name="errorTextAppearance">@style/ErrorTextInput</item>
+    </style>
+
+
+    <style name="ErrorTextInput">
+        <item name="boxStrokeColor">@color/main_color</item>
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+    </style>
 </resources>

@@ -17,7 +17,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="포지션 입력"
+                android:hint="포지션 입력"
                 android:padding="5dp"
                 android:inputType="text"
                 android:textSize="12sp"
@@ -28,7 +28,7 @@
             <EditText
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="필요스킬"
+                android:hint="필요스킬"
                 android:padding="5dp"
                 android:inputType="text"
                 android:textSize="12sp"
@@ -39,7 +39,7 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="인원 수"
+                android:hint="인원 수"
                 android:padding="5dp"
                 android:inputType="text"
                 android:textSize="12sp"

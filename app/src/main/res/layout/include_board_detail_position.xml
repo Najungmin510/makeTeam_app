@@ -30,130 +30,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-        <TextView
-            android:id="@+id/team_front_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_round_gray"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="3dp"
-            android:text="프론트엔드(0)"
-            android:textColor="@color/text_gray_blue"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/team_front_position_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="포지션 내용"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-        <TextView
-            android:id="@+id/team_back_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_round_gray"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="3dp"
-            android:text="백엔드(0)"
-            android:textColor="@color/text_gray_blue"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/team_back_position_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="포지션 내용"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-        <TextView
-            android:id="@+id/team_planner_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_round_gray"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="3dp"
-            android:text="기획자(0)"
-            android:textColor="@color/text_gray_blue"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/team_planner_position_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="포지션 내용"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-        <TextView
-            android:id="@+id/team_design_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_round_gray"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="3dp"
-            android:text="디자이너(0)"
-            android:textColor="@color/text_gray_blue"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/team_design_position_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="포지션 내용"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+        <include
+            layout="@layout/row_position_detail_show"/>
     </LinearLayout>
 
     <View
@@ -164,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

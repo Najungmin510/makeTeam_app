@@ -9,7 +9,7 @@
     android:background="@color/project_white"
     tools:context=".view.user.fragment_membership_setting_school">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_setting_school"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="135dp"
         android:fontFamily="@font/pretendard_medium"
         android:text="현재 다니고 있는 학교를 설정해주세요 :)"
         android:textColor="@color/text_gray"
@@ -47,10 +47,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_layout_user_school"
+        style="@style/TextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="15dp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"

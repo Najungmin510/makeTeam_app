@@ -45,19 +45,18 @@
         app:layout_constraintTop_toBottomOf="@+id/view2">
 
         <LinearLayout
+            android:id="@+id/layout_position_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <include
                 layout="@layout/row_member_positon_layout"/>
-            <include
-                layout="@layout/row_member_positon_layout"/>
-
         </LinearLayout>
     </HorizontalScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_position"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

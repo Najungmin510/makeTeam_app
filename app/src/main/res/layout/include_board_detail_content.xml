@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/project_white">
 
-
     <TextView
         android:id="@+id/team_look_title_detail"
         android:layout_width="wrap_content"
@@ -103,12 +102,42 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/team_date_detail_deadline"
+            android:id="@+id/text_team_date_detail_deadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
             android:text="2000.01.01"
+            android:textColor="@color/text_gray_light"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="공모전 웹사이트 :"
+            android:textColor="@color/text_gray_light"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text_uri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:text="https://www.link.example"
+            android:autoLink="web"
             android:textColor="@color/text_gray_light"
             android:textSize="15sp" />
     </LinearLayout>
@@ -120,7 +149,8 @@
         android:background="@color/text_gray_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
+
 
 
 

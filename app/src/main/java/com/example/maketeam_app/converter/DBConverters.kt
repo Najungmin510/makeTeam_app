@@ -10,8 +10,7 @@ class DBConverters {
     /**리스트 값을 json 형태로 변환*/
     @TypeConverter
     fun fromPosition(list : List<Position>) : String? {
-        val gson = Gson()
-        return gson.toJson(list)
+        return Gson().toJson(list)
     }
 
     /**json 형태를 string으로 변환*/

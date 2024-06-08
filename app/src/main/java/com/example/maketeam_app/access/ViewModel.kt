@@ -1,6 +1,7 @@
 package com.example.maketeam_app.access
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.maketeam_app.model.BoardContent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,6 +13,7 @@ class ViewModel @Inject constructor(private val repository: Repository, applicat
     private val LOG = "viewModel"
 
     fun boardInsert(boardContent: BoardContent){
+        Log.d(LOG,"뷰모델 접근")
         repository.boardInsert(boardContent)
     }
 

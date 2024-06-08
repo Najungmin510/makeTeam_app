@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.R
 import com.example.maketeam_app.base.BaseFragment
@@ -36,6 +37,10 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
             addView()
         }
 
+        binding.btnGoFinalCheckPage.setOnClickListener {
+            previewPage()
+        }
+
     }
 
     private fun addView(){
@@ -49,6 +54,19 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
         remove.setOnClickListener {
             layoutPosition.removeView(addPositionView)
         }
+    }
+
+    private fun previewPage(){
+        val date = binding.groupWriteDeadline.etDate.text.toString().ifEmpty { null }
+        val site = binding.groupWriteSiteLink.etWebsiteLink.text.toString().ifEmpty { null }
+
+        findNavController().navigate(fragment_write_new_board_detailDirections
+            .actionFragmentWriteNewBoardDetailToFragmentWriteNewBoardPreview(
+                title = args.title,
+                content = args.content,
+                deadline = date,
+                link = site
+            ))
     }
 
 }

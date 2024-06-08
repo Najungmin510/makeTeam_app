@@ -11,6 +11,13 @@
     android:orientation="vertical"
     tools:context=".view.board.write.fragment_write_new_board_preview">
 
+    <include
+        android:id="@+id/header_write_new_board_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        layout="@layout/include_header"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

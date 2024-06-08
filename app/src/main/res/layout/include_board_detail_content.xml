@@ -32,6 +32,7 @@
         android:background="@drawable/background_looking_for_team"
         android:paddingHorizontal="10dp"
         android:paddingVertical="6dp"
+        android:fontFamily="@font/pretendard_regular"
         android:text="모집중"
         android:textColor="@color/text_green"
         android:textSize="13sp"
@@ -63,6 +64,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
             android:text="2000.01.01.12:00"
+            android:fontFamily="@font/pretendard_regular"
             android:textColor="@color/text_gray_light"
             android:textSize="11sp" />
     </LinearLayout>
@@ -107,6 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
+            android:fontFamily="@font/pretendard_regular"
             android:text="2000.01.01"
             android:textColor="@color/text_gray_light"
             android:textSize="15sp" />
@@ -136,6 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
+            android:fontFamily="@font/pretendard_regular"
             android:text="https://www.link.example"
             android:autoLink="web"
             android:textColor="@color/text_gray_light"

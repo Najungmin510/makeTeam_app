@@ -41,8 +41,8 @@
                     layout="@layout/include_write_deadline" />
 
                 <include
-                    android:id="@+id/group_write_date"
-                    layout="@layout/include_write_contest_date" />
+                    android:id="@+id/group_write_siteLink"
+                    layout="@layout/include_write_contest_site" />
 
             </LinearLayout>
         </ScrollView>

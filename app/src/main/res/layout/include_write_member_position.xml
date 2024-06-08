@@ -50,8 +50,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include
-                layout="@layout/row_member_positon_layout"/>
         </LinearLayout>
     </HorizontalScrollView>
 

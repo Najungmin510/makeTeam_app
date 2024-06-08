@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("androidx.navigation.safeargs.kotlin")
     kotlin("kapt")
+    kotlin("plugin.serialization") version "1.5.0"
+    id("androidx.navigation.safeargs.kotlin")
+    id ("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
 }
@@ -58,6 +60,7 @@ dependencies {
     val roomVersion = "2.6.1"
     val moshiVersion ="1.15.1"
     val gsonVersion = "2.10.1"
+    val lottieVersion = "6.4.0"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -98,11 +101,13 @@ dependencies {
     //annotationProcessor("androidx.room:room-compiler:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
 
-
     //gson
     implementation("com.google.code.gson:gson:$gsonVersion")
 
     //Moshi
     //implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     //ksp("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
+
+    //lottie (벡터기반 애니메이션)
+    implementation("com.airbnb.android:lottie:$lottieVersion")
 }

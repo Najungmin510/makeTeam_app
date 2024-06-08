@@ -106,11 +106,10 @@
             app:nullable="true"
             android:defaultValue="@null"/>
         <argument
-            android:name="position_name"
-            app:argType="string"
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
             app:nullable="true"
             android:defaultValue="@null"/>
-
 
     </fragment>
 
@@ -125,30 +124,31 @@
         <action
             android:id="@+id/action_fragment_write_new_board_detail_to_fragment_write_new_board_preview"
             app:destination="@id/fragment_write_new_board_preview" />
-
         <argument
             android:name="title"
             app:argType="string"
             android:defaultValue=""/>
-
         <argument
             android:name="content"
             app:argType="string"
             android:defaultValue=""/>
-
         <argument
             android:name="deadline"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
         <argument
             android:name="link"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
+
     <fragment
         android:id="@+id/fragment_write_new_board_preview"
         android:name="com.example.maketeam_app.view.board.write.fragment_write_new_board_preview"
@@ -162,21 +162,23 @@
             android:name="title"
             app:argType="string"
             android:defaultValue=""/>
-
         <argument
             android:name="content"
             app:argType="string"
             android:defaultValue=""/>
-
         <argument
             android:name="deadline"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
         <argument
             android:name="link"
             app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
             app:nullable="true"
             android:defaultValue="@null"/>
     </fragment>

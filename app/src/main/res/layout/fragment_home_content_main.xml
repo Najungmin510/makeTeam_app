@@ -25,15 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/text_content_no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="올라온 게시물이 없어요"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recyclerView_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

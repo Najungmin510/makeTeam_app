@@ -47,21 +47,21 @@
             android:orientation="vertical">
 
             <include
-                android:id="@+id/group_board_detail_content"
+                android:id="@+id/group_board_content"
                 layout="@layout/include_board_detail_content" />
 
             <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:id="@+id/group_board_detail_position"
+                android:id="@+id/group_board_position"
                 layout="@layout/include_board_detail_position" />
 
             <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:id="@+id/group_board_detail_chart"
+                android:id="@+id/group_board_chart"
                 layout="@layout/include_board_detail_position_chart" />
 
         </LinearLayout>

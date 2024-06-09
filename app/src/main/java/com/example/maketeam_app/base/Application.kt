@@ -2,6 +2,7 @@ package com.example.maketeam_app.base
 
 import android.app.Application
 import com.kakao.sdk.common.KakaoSdk
+import dagger.Provides
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

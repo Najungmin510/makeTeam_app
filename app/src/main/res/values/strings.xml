@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">팀모아</string>
+
+    <string name="apply_guide_one">포지션 상세 내용을 꼼꼼히 확인해 주세요.</string>
+    <string name="apply_guide_two">제출 하신 후 내용은 수정할 수 없어요.</string>
+    <string name="apply_guide_three">지원서 작성은 최대 5분정도 걸릴 수 있어요.</string>
 </resources>

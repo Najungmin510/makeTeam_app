@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
     app:startDestination="@id/login_fragment">
+
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.example.maketeam_app.view.login.login_fragment"
@@ -264,6 +265,7 @@
             app:nullable="true"
             android:defaultValue="@null"/>
     </fragment>
+
     <fragment
         android:id="@+id/fragment_board_detail"
         android:name="com.example.maketeam_app.view.board.fragment_board_detail"
@@ -274,7 +276,15 @@
         <action
             android:id="@+id/action_fragment_board_detail_to_home_fragment_contest_main"
             app:destination="@id/home_fragment_contest_main" />
+        <action
+            android:id="@+id/action_fragment_board_detail_to_fragment_board_apply_to_group"
+            app:destination="@id/fragment_board_apply_to_group" />
 
     </fragment>
+    <fragment
+        android:id="@+id/fragment_board_apply_to_group"
+        android:name="com.example.maketeam_app.view.board.apply.fragment_board_apply_to_group"
+        android:label="fragment_board_apply_to_group" />
+
 
 </navigation>

@@ -23,4 +23,7 @@ class ViewModel @Inject constructor(private val repository: Repository, applicat
         return repository.getBoard(category)
     }
 
+    fun getDetailBoard(id : Long) : BoardContent {
+        return repository.getDetailBoard(id)
+    }
 }

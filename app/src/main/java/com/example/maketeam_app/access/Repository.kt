@@ -19,4 +19,8 @@ class Repository @Inject constructor(private val dbDao : DBDao) {
     fun getBoard(category : Int) : LiveData<List<BoardContent>> {
        return dbDao.getAll(category)
     }
+
+    fun getDetailBoard(id : Long) : BoardContent {
+        return dbDao.getDetail(id)
+    }
 }

@@ -10,8 +10,8 @@ import androidx.room.PrimaryKey
 @Entity
 data class BoardContent(
     val goal : Int, //0이면 학교, 1이면 공모전 부분
-    val title : String,
-    val content : String,
+    val title : String?,
+    val content : String?,
     val writeDay : String, //작성일자
     val deadline : String?, //마감일자
     val siteLink : String?, //사이트 링크

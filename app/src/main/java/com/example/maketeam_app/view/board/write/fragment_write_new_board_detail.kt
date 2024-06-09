@@ -28,9 +28,6 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
     private val positionList = mutableListOf<LinearLayout>()
 
     override fun initView() {
-        Log.d(LOG, args.content)
-        Log.d(LOG, args.title)
-
         binding.headerWriteNewBoardDetail.textHeaderTitle.text = "글쓰기"
         binding.headerWriteNewBoardDetail.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
@@ -97,6 +94,7 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
 
         findNavController().navigate(fragment_write_new_board_detailDirections
             .actionFragmentWriteNewBoardDetailToFragmentWriteNewBoardPreview(
+                category = args.category,
                 title = args.title,
                 content = args.content,
                 deadline = date,

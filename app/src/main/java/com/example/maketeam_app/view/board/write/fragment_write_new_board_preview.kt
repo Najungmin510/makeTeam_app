@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.R
 import com.example.maketeam_app.access.ViewModel
@@ -49,19 +50,19 @@ class fragment_write_new_board_preview : BaseFragment<FragmentWriteNewBoardPrevi
     override fun initClick() {
         binding.btnUploadNewBoard.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
-                vm.boardInsert(BoardContent(0,
+                vm.boardInsert(BoardContent(
+                    args.category,
                     args.title,
                     args.content,
                     getDate(),
                     args.deadline,
                     args.link,
-                    position = listOf(
-                        Position("테스트","테스트내용", "4"),
-                        Position("테스트2","테스트내용2", "5"))
+                    position = args.position?.toList()
                 ))
             }
 
             Toast.makeText(requireContext(), "게시물을 업로드했어요", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.home_fragment_school_main)
         }
     }
 
@@ -93,7 +94,6 @@ class fragment_write_new_board_preview : BaseFragment<FragmentWriteNewBoardPrevi
         val position: Array<Position>? = args.position
         val inflater = LayoutInflater.from(requireContext())
 
-
         if (position != null) {
             val layoutPosition = binding.groupBoardDetailPosition.layoutShowPosition
             val guideNoPosition = layoutPosition.findViewById<TextView>(R.id.text_position_no) //포지션 없을 때 안내 문구
@@ -109,7 +109,6 @@ class fragment_write_new_board_preview : BaseFragment<FragmentWriteNewBoardPrevi
                 layoutPosition.addView(addPosition)
             }
         }
-
     }
 
     /**오늘 날짜 및 시간구하기*/

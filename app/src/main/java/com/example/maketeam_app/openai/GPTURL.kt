@@ -10,12 +10,12 @@ import java.net.URL
 
 object GPTURL {
     private fun gptRules(): String {
-        return ChatGPTPrompt.promptGPT
+        return ChatGPTPrompt.SYSTEMROLE
     }
 
     fun chatGPT(userMessage: String): String {
         val url = "https://api.openai.com/v1/chat/completions"
-        val apiKey = "YOUR_API"
+        val apiKey = "YOUR_API_KEY"
         val model = "gpt-3.5-turbo"
         val systemPrompt = gptRules()
         val temperature = "0.1"
@@ -69,4 +69,10 @@ object GPTURL {
         val endMarker = response.indexOf("\"", startMarker)
         return response.substring(startMarker, endMarker)
     }
+}
+
+fun main() {
+    val userMessage = "안녕하세요ㅕ 저는 송태웅입니다?"
+    val response = GPTURL.chatGPT(userMessage)
+    println("ChatGPT 응답: $response")
 }

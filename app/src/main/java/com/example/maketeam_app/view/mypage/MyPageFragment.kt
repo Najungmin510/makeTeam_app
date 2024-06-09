@@ -1,21 +1,20 @@
 package com.example.maketeam_app.view.mypage
 
-import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.maketeam_app.R
 import com.example.maketeam_app.databinding.FragmentMyPageBinding
-import com.example.maketeam_app.openai.GPTURL.chatGPT
-import kotlinx.coroutines.DelicateCoroutinesApi
+import com.example.maketeam_app.openai.GPTURL
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MyPageFragment : Fragment() {
 
@@ -43,12 +42,29 @@ class MyPageFragment : Fragment() {
         binding.introText.isEnabled = false
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun editChatBot() {
         binding.editChatbot.setOnClickListener {
-            GlobalScope.launch(Dispatchers.Main) {
-                val response = chatGPT(binding.introText.toString())
-                binding.introText.text = Editable.Factory.getInstance().newEditable(response)
+            val progressDialog = ProgressDialog(requireContext()).apply {
+                setMessage("챗 봇이 첨삭 중 입니다. 잠시만 기다려 주세요.")
+                setCancelable(false)
+            }
+
+            lifecycleScope.launch {
+                progressDialog.show()
+                try {
+                    val response = withContext(Dispatchers.IO) {
+                        val promptQuery = binding.introText.text.toString()
+                        val response = GPTURL.chatGPT(promptQuery)
+                        Log.d("프롬프트 쿼리", promptQuery)
+                        Log.d("프롬프트 답장", response)
+                        response // 이 부분에서 response를 반환해야 합니다.
+                    }
+                    withContext(Dispatchers.Main) {
+                        binding.introText.text = Editable.Factory.getInstance().newEditable(response)
+                    }
+                } finally {
+                    progressDialog.dismiss()
+                }
             }
         }
     }

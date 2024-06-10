@@ -20,6 +20,7 @@
         android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/text_push_alarm"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginVertical="10dp"
@@ -31,6 +32,7 @@
         android:textSize="15sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"

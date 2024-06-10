@@ -7,6 +7,7 @@
     android:gravity="center">
 
     <CheckBox
+        android:id="@+id/btn_checkbox"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:button="@null"
@@ -14,7 +15,7 @@
         android:layout_marginHorizontal="5dp"/>
 
     <TextView
-        android:id="@+id/team_planner_detail"
+        android:id="@+id/team_apply_position_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/background_round_gray"
@@ -31,6 +32,7 @@
         android:layout_weight="1">
 
         <TextView
+            android:id="@+id/team_apply_position_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="세부사항"

@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.access.ViewModel
@@ -24,6 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class fragment_write_new_board : BaseFragment<FragmentWriteNewBoardBinding>(R.layout.fragment_write_new_board) {
 
+    private val args : fragment_write_new_boardArgs by navArgs()
     private var title = false
     private var content = false
 
@@ -48,6 +50,7 @@ class fragment_write_new_board : BaseFragment<FragmentWriteNewBoardBinding>(R.la
     private fun goDetailScreen(){
         findNavController().navigate(
             fragment_write_new_boardDirections.actionFragmentWriteNewBoardToFragmentWriteNewBoardDetail(
+                category = args.category,
                 title = binding.textTitle.text.toString(),
                 content = binding.etContent.text.toString()
             )

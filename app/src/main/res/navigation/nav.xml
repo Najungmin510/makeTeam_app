@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
     app:startDestination="@id/login_fragment">
+
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.example.maketeam_app.view.login.login_fragment"
@@ -59,6 +60,40 @@
         <action
             android:id="@+id/action_home_fragment_school_main_to_fragment_write_new_board"
             app:destination="@id/fragment_write_new_board" />
+
+        <argument
+            android:name="category"
+            app:argType="string"/>
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="deadline"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="link"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_home_fragment_school_main_to_fragment_board_detail"
+            app:destination="@id/fragment_board_detail" />
+
     </fragment>
 
     <fragment
@@ -71,6 +106,38 @@
         <action
             android:id="@+id/action_home_fragment_contest_main_to_fragment_write_new_board"
             app:destination="@id/fragment_write_new_board" />
+
+        <argument
+            android:name="category"
+            app:argType="integer"/>
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="content"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="deadline"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="link"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_home_fragment_contest_main_to_fragment_board_detail"
+            app:destination="@id/fragment_board_detail" />
     </fragment>
 
     <fragment
@@ -88,13 +155,19 @@
             app:destination="@id/fragment_write_new_board_detail" />
 
         <argument
+            android:name="category"
+            app:argType="integer"/>
+
+        <argument
             android:name="title"
             app:argType="string"
-            android:defaultValue=""/>
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="content"
             app:argType="string"
-            android:defaultValue=""/>
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="deadline"
             app:argType="string"
@@ -106,11 +179,10 @@
             app:nullable="true"
             android:defaultValue="@null"/>
         <argument
-            android:name="position_name"
-            app:argType="string"
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
             app:nullable="true"
             android:defaultValue="@null"/>
-
 
     </fragment>
 
@@ -127,59 +199,93 @@
             app:destination="@id/fragment_write_new_board_preview" />
 
         <argument
+            android:name="category"
+            app:argType="integer"/>
+        <argument
             android:name="title"
             app:argType="string"
-            android:defaultValue=""/>
-
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="content"
             app:argType="string"
-            android:defaultValue=""/>
-
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="deadline"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
         <argument
             android:name="link"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
+
     <fragment
         android:id="@+id/fragment_write_new_board_preview"
         android:name="com.example.maketeam_app.view.board.write.fragment_write_new_board_preview"
         android:label="fragment_write_new_board_preview" >
-
         <action
             android:id="@+id/action_fragment_write_new_board_preview_to_fragment_write_new_board_detail"
             app:destination="@id/fragment_write_new_board_detail" />
 
         <argument
+            android:name="category"
+            app:argType="integer"/>
+        <argument
             android:name="title"
             app:argType="string"
-            android:defaultValue=""/>
-
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="content"
             app:argType="string"
-            android:defaultValue=""/>
-
+            app:nullable="true"
+            android:defaultValue="@null"/>
         <argument
             android:name="deadline"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
-
         <argument
             android:name="link"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
+        <argument
+            android:name="position"
+            app:argType="com.example.maketeam_app.model.Position[]"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_board_detail"
+        android:name="com.example.maketeam_app.view.board.fragment_board_detail"
+        android:label="fragment_board_detail">
+        <action
+            android:id="@+id/action_fragment_board_detail_to_home_fragment_school_main"
+            app:destination="@id/home_fragment_school_main" />
+        <action
+            android:id="@+id/action_fragment_board_detail_to_home_fragment_contest_main"
+            app:destination="@id/home_fragment_contest_main" />
+        <action
+            android:id="@+id/action_fragment_board_detail_to_fragment_board_apply_to_group"
+            app:destination="@id/fragment_board_apply_to_group" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_board_apply_to_group"
+        android:name="com.example.maketeam_app.view.board.apply.fragment_board_apply_to_group"
+        android:label="fragment_board_apply_to_group" />
+
 
     <fragment
         android:id="@+id/mypage_fragment"

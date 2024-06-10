@@ -25,15 +25,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <include
+        android:id="@+id/header_board_detail"
+        layout="@layout/include_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_apply_team"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/header_board_detail">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,20 +47,24 @@
             android:orientation="vertical">
 
             <include
-                android:id="@+id/group_board_detail_content"
+                android:id="@+id/group_board_content"
                 layout="@layout/include_board_detail_content" />
 
             <include
-                android:id="@+id/group_board_detail_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/group_board_position"
                 layout="@layout/include_board_detail_position" />
 
             <include
-                android:id="@+id/group_board_detail_chart"
-                layout="@layout/include_board_detail_position_chart"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/group_board_chart"
+                layout="@layout/include_board_detail_position_chart" />
 
         </LinearLayout>
-
-
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

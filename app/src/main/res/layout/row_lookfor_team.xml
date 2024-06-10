@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_preview_board"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_regular"
-            android:text="팀장이름(포지션)"
+            android:text="홍길동(팀장)"
             android:textColor="@color/black"
             android:textSize="11sp" />
 
@@ -47,7 +48,8 @@
             android:layout_marginStart="5dp"
             android:text="2000.01.01.12:00"
             android:textColor="@color/text_gray_light"
-            android:textSize="11sp" />
+            android:textSize="11sp"
+            android:fontFamily="@font/pretendard_regular"/>
 
     </LinearLayout>
 
@@ -63,6 +65,7 @@
         android:text="모집중"
         android:textColor="@color/text_green"
         android:textSize="13sp"
+        android:fontFamily="@font/pretendard_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

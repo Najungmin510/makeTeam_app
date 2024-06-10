@@ -24,4 +24,10 @@ interface DBDao {
      * */
     @Query("SELECT * FROM boardcontent WHERE goal = :n")
     fun getAll(n : Int) : LiveData<List<BoardContent>>
+
+    /**
+     * 클릭한 게시물의 세부정보를 가져옴
+     * */
+    @Query("SELECT * FROM boardcontent WHERE id = :n")
+    fun getDetail(n : Long) : BoardContent
 }

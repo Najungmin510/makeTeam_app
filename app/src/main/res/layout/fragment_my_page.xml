@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 프로필 사진, 이름, 학과 -->
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_profile_placeholder"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/profile_background"
+                android:scaleType="centerCrop"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="송태웅"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/profile_university"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="한림 대학교"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 지원 현황, 최근 본 내역, 지원서 열람 -->
+        <LinearLayout
+            android:id="@+id/status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:paddingBottom="22dp">
+
+            <LinearLayout
+                android:id="@+id/application_status_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/application_status_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/application_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="지원 현황"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recent_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/recent_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/recent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="최근 본 내역"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewed_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/viewed_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/viewed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="지원서 열람"
+                    android:textColor="#000000"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 내 스택 -->
+        <LinearLayout
+            android:id="@+id/stack_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/stack_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 스택"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/stack_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/react_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="React"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:backgroundTint="#D9D9D9"/>
+
+                <Button
+                    android:id="@+id/nextjs_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next.js"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:backgroundTint="#D9D9D9"
+                    android:layout_marginStart="8dp"/>
+
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:backgroundTint="#D9D9D9"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/github_link_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:textColor="#000000"
+                android:text="깃허브 링크(포폴 링크)"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingTop="8dp"/>
+
+            <TextView
+                android:id="@+id/github_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#0828C8"
+                android:text="https://github.com/"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                android:paddingTop="8dp"/>
+        </LinearLayout>
+
+        <!-- 내가 쓴 게시글 -->
+        <LinearLayout
+            android:id="@+id/my_posts_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/my_posts_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="내가 쓴 게시글"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"/>
+
+            <Button
+                android:id="@+id/post_status_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="#D9D9D9"
+                android:paddingStart="-15dp"
+                android:paddingTop="-15dp"
+                android:paddingEnd="-15dp"
+                android:paddingBottom="-15dp"
+                android:text="모집중"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:text="게시글 제목\n게시글 첫 줄에 보이는 이지모 잡지로 모집합니다!"
+            android:textSize="14sp"
+            android:paddingBottom="8dp"/>
+
+        <Button
+            android:id="@+id/post_details_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D9D9D9"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="프론트(3) / 백(3) / 디자인(2)"
+            android:textSize="14sp"
+            android:paddingTop="8dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/intro_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/my_introduce_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/my_introduce"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="자기 소개서"
+                    android:textColor="#000000"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/edit_chatbot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="#D9D9D9"
+                    android:paddingStart="-15dp"
+                    android:paddingTop="-15dp"
+                    android:paddingEnd="-15dp"
+                    android:paddingBottom="-15dp"
+                    android:text="챗봇 첨삭"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/intro_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/intro_placeholder"
+                android:background="@drawable/layout_border"
+                android:textSize="14sp"
+                android:textColor = "#000000"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:layout_marginBottom="20dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="8dp"/>
+
+
+
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수정 &amp; 저장하기"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:backgroundTint="#D9D9D9"
+                android:padding="4dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+

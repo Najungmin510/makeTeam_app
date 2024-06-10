@@ -1,4 +1,8 @@
 <resources>
+    <string name="app_name">makeTeam_app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_placeholder">수정 &amp; 저장하기 버튼을 눌러 자기소개를 수정하세요!\n\n\n\n\n\n</string>
     <string name="app_name">팀모아</string>
 
     <string name="apply_guide_one">포지션 상세 내용을 꼼꼼히 확인해 주세요.</string>

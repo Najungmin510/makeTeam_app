@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> {
                     navController.navigate(R.id.home_fragment_school_main)
                 }
+
+                R.id.mypage -> {
+                    navController.navigate(R.id.mypage_fragment)  //
+                }
             }
             return@setOnItemSelectedListener true
         }

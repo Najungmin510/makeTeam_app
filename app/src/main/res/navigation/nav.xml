@@ -287,4 +287,10 @@
         android:label="fragment_board_apply_to_group" />
 
 
+    <fragment
+        android:id="@+id/mypage_fragment"
+        android:name="com.example.maketeam_app.view.mypage.MyPageFragment"
+        android:label="My Page"
+        tools:layout="@layout/fragment_my_page" />
+
 </navigation>

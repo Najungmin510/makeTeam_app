@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.mypage -> {
-                    navController.navigate(R.id.mypage_fragment)  //
+                    navController.navigate(R.id.mypage_fragment)
                 }
             }
             return@setOnItemSelectedListener true

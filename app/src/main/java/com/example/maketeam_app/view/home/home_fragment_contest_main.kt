@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.access.ViewModel
 import com.example.maketeam_app.base.BaseFragment
@@ -23,6 +24,9 @@ class home_fragment_contest_main : BaseFragment<FragmentHomeContentMainBinding>(
     private val vm : ViewModel by activityViewModels()
     private val LOG = "contestMain"
     override fun initView() {
+        (requireActivity() as MainActivity).showNavigation()
+        (requireActivity() as MainActivity).showTabLayout()
+
         settingData()
     }
 
@@ -41,14 +45,10 @@ class home_fragment_contest_main : BaseFragment<FragmentHomeContentMainBinding>(
             override fun clickBoard(id: Long) {
                 Log.d(LOG, "게시글 레이아웃 클릭")
 
-                parentFragmentManager.beginTransaction().replace(
-                    R.id.container_fragment,
-                    fragment_board_detail().apply {
-                        arguments = Bundle().apply {
-                            putLong("clickId", id)
-                        }
-                    }
-                ).commit()
+                findNavController().navigate(home_fragment_contest_mainDirections
+                    .actionHomeFragmentContestMainToFragmentBoardDetail(
+                        clickId = id
+                    ))
 
             } //clickboard
         })

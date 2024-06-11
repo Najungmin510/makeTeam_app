@@ -1,3 +1,5 @@
+import com.android.tools.r8.internal.Sp
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -61,6 +63,7 @@ dependencies {
     val moshiVersion ="1.15.1"
     val gsonVersion = "2.10.1"
     val lottieVersion = "6.4.0"
+    val SpinKitVersion = "1.4.0"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -111,7 +114,6 @@ dependencies {
     //lottie (벡터기반 애니메이션)
     implementation("com.airbnb.android:lottie:$lottieVersion")
 
-    //Navigation
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.4.0")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.4.0")
+    //
+    implementation("com.github.ybq:Android-SpinKit:$SpinKitVersion")
 }

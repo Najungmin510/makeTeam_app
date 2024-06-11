@@ -1,60 +1,147 @@
 package com.example.maketeam_app.view.mypage
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.annotation.SuppressLint
+import android.app.ProgressDialog
+import android.os.Build
+import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
+import com.example.maketeam_app.access.ViewModel
+import com.example.maketeam_app.base.BaseFragment
+import com.example.maketeam_app.base.BaseProgressDialog
+import com.example.maketeam_app.databinding.FragmentApplytoBinding
+import com.example.maketeam_app.openai.GPTURL
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_applyto) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ApplytoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ApplytoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val vm : ViewModel by activityViewModels()
+    private var ischeck = false
+    private lateinit var progressBar: ProgressBar
+    override fun initView() {
+        (requireActivity() as MainActivity).noShowNavigation()
+        (requireActivity() as MainActivity).noShowTabLayout()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        //settingProgress()
+    }
+
+    override fun initClick() {
+        //apply()
+        chatBotUse()
+    }
+
+    /**
+     * 포지션 체크박스 생성
+     * */
+//    @SuppressLint("SetTextI18n")
+//    private fun settingApplyPosition(){
+//        lifecycleScope.launch(Dispatchers.IO){
+//            val data = vm.getDetailBoard(args.clickId)
+//
+//            withContext(Dispatchers.Main){
+//                val positions = data.position
+//                val inflater = LayoutInflater.from(requireContext())
+//
+//                if(positions != null){
+//                    val layoutPosition = binding.groupSelectMyPosition.layoutSelectMyPosition
+//                    val guideNoPosition = layoutPosition.findViewById<TextView>(R.id.text_position_no_apply)
+//                    guideNoPosition.visibility = View.GONE
+//
+//                    for(p in positions){
+//                        val addPosition = inflater.inflate(
+//                            R.layout.row_btn_checkbox_apply,
+//                            layoutPosition,
+//                            false
+//                        )
+//
+//                        val needPositionName = addPosition.findViewById<TextView>(R.id.team_apply_position_name)
+//                        val needPositionDetail = addPosition.findViewById<TextView>(R.id.team_apply_position_detail)
+//
+//                        needPositionName.text = "${p.positionName}(${p.positionPeople})"
+//                        needPositionDetail.text = p.positionDetail
+//                        layoutPosition.addView(addPosition)
+//                    }
+//                }
+//            }
+//        }
+//
+//    }
+
+//    private fun apply(){
+//        binding.groupApplyButton.textPushAlarm.setOnClickListener {
+//            ischeck = if(!ischeck){
+//                binding.groupApplyButton.textPushAlarm
+//                    .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_checkbox_yes,0,0,0)
+//                true
+//            } else {
+//                binding.groupApplyButton.textPushAlarm
+//                    .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_checkbox_no,0,0,0)
+//                false
+//            }
+//        }
+//    }
+
+    private fun chatBotUse(){
+        binding.groupWriteMyMessage.btnChatGptSend.setOnClickListener {
+            var dialog = BaseProgressDialog.progressDialog(requireContext())
+
+            lifecycleScope.launch {
+                withContext(Dispatchers.Main){
+                    dialog.show()
+                }
+
+                try {
+                    val response = withContext(Dispatchers.IO) {
+                        val promptQuery = binding.groupWriteMyMessage.etMyMessage.text.toString()
+                        val response = GPTURL.chatGPT(promptQuery)
+                        Log.d("프롬프트 쿼리", promptQuery)
+                        Log.d("프롬프트 답장", response)
+                        response // 이 부분에서 response를 반환해야 합니다.
+                    }
+
+                    withContext(Dispatchers.Main) {
+                        binding.groupWriteMyMessage.etMyMessage.text = Editable.Factory.getInstance().newEditable(response)
+                    }
+
+                } finally {
+                    dialog.dismiss()
+                }
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_applyto, container, false)
+    /*
+    @SuppressLint("MissingInflatedId")
+    private fun settingProgress(){
+        val inflater = LayoutInflater.from(requireContext())
+        val layoutPosition = binding.layoutApplyMain
+        val addProgress = inflater.inflate(R.layout.dialog_progress_loading, layoutPosition, false)
+        progressBar = addProgress.findViewById(R.id.spinkit_progress)
+
+        val doubleBounce = DoubleBounce()
+        progressBar.indeterminateDrawable = doubleBounce
+
+        layoutPosition.addView(addProgress)
+        progressBar.visibility = View.GONE
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ApplytoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ApplytoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun showProgress(){
+        progressBar.visibility = View.VISIBLE
     }
+
+    private fun noShowProgress(){
+        progressBar.visibility = View.GONE
+    }
+*/
 }

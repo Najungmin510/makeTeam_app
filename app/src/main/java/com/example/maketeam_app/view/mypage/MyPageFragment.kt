@@ -29,6 +29,7 @@ class MyPageFragment : Fragment() {
 
         moveMettingFragment()
         moveApplytoFragment()
+        mozipFlag()
     }
 
     private fun moveMettingFragment() {
@@ -46,6 +47,12 @@ class MyPageFragment : Fragment() {
         binding.post2.setOnClickListener {
             findNavController().navigate(R.id.action_mypage_fragment_to_applyto_fragment)
         }
+    }
+
+    private fun mozipFlag() {
+//        // DB에서 isEnd 값을 가져와서 모집 상태를 설정
+//        val isEnd = // 여기에 데이터베이스에서 isEnd 값을 가져오는 코드를 작성해야 합니다.
+//            binding.mozip.text = if (isEnd) "모집완료" else "모집중"
     }
     override fun onDestroyView() {
         super.onDestroyView()

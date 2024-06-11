@@ -15,7 +15,18 @@ data class TeamMember(
     val department: String
 )
 
+interface TeamAdapterClickListener {
+    fun onTeamMemberClicked(teamMember: TeamMember)
+}
+
 class TeamAdapter(private val context: Context, private val teamMembers: List<TeamMember>) : BaseAdapter() {
+
+    private var clickListener: TeamAdapterClickListener? = null
+
+    fun setTeamAdapterClickListener(listener: TeamAdapterClickListener) {
+        this.clickListener = listener
+    }
+
     override fun getCount(): Int = teamMembers.size
 
     override fun getItem(position: Int): Any = teamMembers[position]
@@ -35,6 +46,11 @@ class TeamAdapter(private val context: Context, private val teamMembers: List<Te
         textViewName.text = teamMember.name
         textViewSchool.text = teamMember.school
         textViewDepartment.text = teamMember.department
+
+        // 항목 클릭 이벤트 처리
+        view.setOnClickListener {
+            clickListener?.onTeamMemberClicked(teamMember)
+        }
 
         return view
     }

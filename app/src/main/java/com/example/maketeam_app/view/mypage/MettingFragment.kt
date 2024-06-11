@@ -41,7 +41,6 @@ class MettingFragment : Fragment() {
 
     private fun initView() {
         initAdapter()
-        moveMyPageHome()
     }
 
     private fun initAdapter()
@@ -59,12 +58,7 @@ class MettingFragment : Fragment() {
         listView.adapter = adapter
     }
 
-    private fun moveMyPageHome()
-    {
-        binding.listView.setOnClickListener{
 
-        }
-    }
 
     private fun initClick() {
 //        binding.someButton.setOnClickListener {

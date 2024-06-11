@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout10"
+        android:id="@+id/layout_select_my_position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -30,10 +30,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-        <include layout="@layout/row_btn_checkbox_apply" />
-
-        <include layout="@layout/row_btn_checkbox_apply" />
-
+        <TextView
+            android:id="@+id/text_position_no_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/black"
+            android:text="팀장이 등록한 필요 포지션이 없어요."/>
     </LinearLayout>
 
     <View
@@ -45,6 +49,6 @@
         android:background="@color/text_gray_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_select_my_position" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

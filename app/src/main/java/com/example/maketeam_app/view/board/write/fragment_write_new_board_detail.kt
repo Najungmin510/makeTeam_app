@@ -19,6 +19,7 @@ import com.example.maketeam_app.R
 import com.example.maketeam_app.base.BaseFragment
 import com.example.maketeam_app.databinding.FragmentWriteNewBoardDetailBinding
 import com.example.maketeam_app.model.Position
+import com.github.mikephil.charting.charts.BarChart
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +31,7 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
     override fun initView() {
         binding.headerWriteNewBoardDetail.textHeaderTitle.text = "글쓰기"
         binding.headerWriteNewBoardDetail.btnWriteDetailSetting.visibility = View.INVISIBLE
+
     }
 
     override fun initClick() {

@@ -110,4 +110,8 @@ dependencies {
 
     //lottie (벡터기반 애니메이션)
     implementation("com.airbnb.android:lottie:$lottieVersion")
+
+    //Navigation
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.4.0")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.4.0")
 }

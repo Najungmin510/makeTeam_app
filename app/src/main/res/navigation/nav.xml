@@ -287,10 +287,34 @@
         android:label="fragment_board_apply_to_group" />
 
 
+
     <fragment
         android:id="@+id/mypage_fragment"
         android:name="com.example.maketeam_app.view.mypage.MyPageFragment"
         android:label="My Page"
-        tools:layout="@layout/fragment_my_page" />
+        tools:layout="@layout/fragment_my_page">
+        <action
+            android:id="@+id/action_mypage_fragment_to_meeting_fragment"
+            app:destination="@id/meeting_fragment" />
+        <action
+            android:id="@+id/action_mypage_fragment_to_applyto_fragment"
+            app:destination="@id/applyto_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeting_fragment"
+        android:name="com.example.maketeam_app.view.mypage.MettingFragment"
+        android:label="Meeting"
+        tools:layout="@layout/fragment_metting" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/applyto_fragment"
+        android:name="com.example.maketeam_app.view.mypage.ApplytoFragment"
+        android:label="Applyto"
+        tools:layout="@layout/fragment_applyto" >
+    </fragment>
+
+
 
 </navigation>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/team_project_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/textViewProfessor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor= "#000000"
+            android:text="김성우 교수님의 HCI 팀원 찾습니다"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:paddingBottom="8dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textColor= "#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingEnd="8dp"/>
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor= "#000000"
+            android:text="김김김"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학교"
+            android:textColor= "#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingEnd="8dp"/>
+        <TextView
+            android:id="@+id/textViewSchool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor= "#000000"
+            android:text="한림대학교"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학과(학번)"
+            android:textColor= "#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingEnd="8dp"/>
+        <TextView
+            android:id="@+id/textViewDepartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20240000"
+            android:textColor= "#000000"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/team_situation_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="프론트엔드"
+            android:layout_marginEnd="15dp"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/team_situation_detail_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="안드로이드"
+            android:layout_marginEnd="15dp"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/team_situation_detail_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="백엔드"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

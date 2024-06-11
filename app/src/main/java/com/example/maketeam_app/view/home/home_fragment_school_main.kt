@@ -45,14 +45,19 @@ class home_fragment_school_main : BaseFragment<FragmentHomeMainBinding>(R.layout
             override fun clickBoard(id: Long) {
                 Log.d(LOG, "게시글 레이아웃 클릭")
 
-                parentFragmentManager.beginTransaction().replace(
-                    R.id.container_fragment,
-                    fragment_board_detail().apply {
-                        arguments = Bundle().apply {
-                            putLong("clickId", id)
-                        }
-                    }
-                ).commit()
+                findNavController().navigate(home_fragment_school_mainDirections
+                    .actionHomeFragmentSchoolMainToFragmentBoardDetail(
+                        clickId = id
+                    ))
+
+//                parentFragmentManager.beginTransaction().replace(
+//                    R.id.container_fragment,
+//                    fragment_board_detail().apply {
+//                        arguments = Bundle().apply {
+//                            putLong("clickId", id)
+//                        }
+//                    }
+//                ).commit()
 
             } //clickboard
         })

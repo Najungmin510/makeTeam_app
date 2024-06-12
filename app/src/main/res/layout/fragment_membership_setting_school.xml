@@ -9,28 +9,23 @@
     android:background="@color/project_white"
     tools:context=".view.user.fragment_membership_setting_school">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_setting_school"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/project_white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <include
+       android:id="@+id/header_setting_school"
+       layout="@layout/include_header"/>
 
     <TextView
         android:id="@+id/title_setting_school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:bufferType="spannable"
         android:fontFamily="@font/pretendard_semibold"
         android:text="현재 다니고 있는 학교를\n설정해주세요"
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_setting_school" />
+        app:layout_constraintTop_toBottomOf="@+id/header_setting_school" />
 
     <TextView
         android:id="@+id/textView3"

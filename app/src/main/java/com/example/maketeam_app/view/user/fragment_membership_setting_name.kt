@@ -2,6 +2,7 @@ package com.example.maketeam_app.view.user
 
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.findNavController
@@ -16,12 +17,10 @@ class fragment_membership_setting_name :
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
+        settingBar()
         val textAni : Animation = AnimationUtils.loadAnimation(requireContext(), R.anim.textanim)
-        //val editAni : Animation = AnimationUtils.loadAnimation(requireContext(), R.anim.input_text_anim)
-
         binding.textNameTitle.startAnimation(textAni)
-        //binding.etLayoutUserName.startAnimation(editAni)
+
 
     }
 
@@ -53,6 +52,14 @@ class fragment_membership_setting_name :
             }
 
         })
+    }
+
+    private fun settingBar(){
+        binding.headerSettingName.btnBackX.setOnClickListener {
+            activity?.finishAffinity()
+        }
+        binding.headerSettingName.textHeaderTitle.text = "회원가입"
+        binding.headerSettingName.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
 }

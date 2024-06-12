@@ -1,6 +1,7 @@
 package com.example.maketeam_app.view.user
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.maketeam_app.MainActivity
@@ -13,6 +14,7 @@ class fragment_membership_success : BaseFragment<FragmentMembershipSuccessBindin
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
+        settingBar()
     }
 
     override fun initClick() {
@@ -21,4 +23,12 @@ class fragment_membership_success : BaseFragment<FragmentMembershipSuccessBindin
         }
     }
 
+    private fun settingBar(){
+        binding.headerSuccess.textHeaderTitle.text = "회원가입"
+        binding.headerSuccess.btnWriteDetailSetting.visibility = View.INVISIBLE
+        binding.headerSuccess.btnBackX.setBackgroundResource(R.drawable.btn_back_left)
+        binding.headerSuccess.btnBackX.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_membership_success_to_fragment_membership_setting_sch_inform)
+        }
+    }
 }

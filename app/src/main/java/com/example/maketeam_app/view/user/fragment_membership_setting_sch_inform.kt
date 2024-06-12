@@ -3,6 +3,7 @@ package com.example.maketeam_app.view.user
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -24,6 +25,7 @@ class fragment_membership_setting_sch_inform : BaseFragment<FragmentMembershipSe
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
 
+        settingBar()
         val textAni : Animation = AnimationUtils.loadAnimation(requireContext(), R.anim.textanim)
         binding.titleSettingSchInform.startAnimation(textAni)
     }
@@ -101,6 +103,15 @@ class fragment_membership_setting_sch_inform : BaseFragment<FragmentMembershipSe
                 Toast.makeText(requireContext(), "내용을 모두 입력해 주세요.", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun settingBar(){
+        binding.headerSchInform.textHeaderTitle.text = "회원가입"
+        binding.headerSchInform.btnBackX.setBackgroundResource(R.drawable.btn_back_left)
+        binding.headerSchInform.btnBackX.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_membership_setting_sch_inform_to_fragment_membership_setting_school)
+        }
+        binding.headerSchInform.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
 }

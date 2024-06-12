@@ -10,6 +10,13 @@
     android:background="@color/project_white"
     tools:context=".view.user.fragment_membership_success">
 
+    <include
+        android:id="@+id/header_success"
+        layout="@layout/include_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
@@ -22,7 +29,7 @@
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/header_success" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -46,7 +53,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="93dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17"

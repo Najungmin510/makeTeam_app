@@ -6,6 +6,7 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.TextWatcher
 import android.text.style.ForegroundColorSpan
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,7 @@ class fragment_membership_setting_school : BaseFragment<FragmentMembershipSettin
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
+        settingBar()
         settingTextColor()
     }
 
@@ -63,6 +64,16 @@ class fragment_membership_setting_school : BaseFragment<FragmentMembershipSettin
 
         val textAni : Animation = AnimationUtils.loadAnimation(requireContext(), R.anim.textanim)
         binding.titleSettingSchool.startAnimation(textAni)
+    }
+
+    private fun settingBar(){
+        binding.headerSettingSchool.btnBackX.setBackgroundResource(R.drawable.btn_back_left)
+        binding.headerSettingSchool.textHeaderTitle.text = "회원가입"
+        binding.headerSettingSchool.btnWriteDetailSetting.visibility = View.INVISIBLE
+
+        binding.headerSettingSchool.btnBackX.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_membership_setting_school_to_fragment_membership_setting_name)
+        }
     }
 
 }

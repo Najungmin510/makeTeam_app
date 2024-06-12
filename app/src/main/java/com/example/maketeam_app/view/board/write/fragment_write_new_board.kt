@@ -33,7 +33,8 @@ class fragment_write_new_board : BaseFragment<FragmentWriteNewBoardBinding>(R.la
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
+        (requireActivity() as MainActivity).noShowToolbar()
+        settingBar()
         isCheck()
     }
 
@@ -55,6 +56,14 @@ class fragment_write_new_board : BaseFragment<FragmentWriteNewBoardBinding>(R.la
                 content = binding.etContent.text.toString()
             )
         )
+    }
+
+    private fun settingBar(){
+        if(args.category == 0){
+            binding.headerWriteNewBoard.textHeaderTitle.text = "교내 글쓰기"
+        } else {
+            binding.headerWriteNewBoard.textHeaderTitle.text= "공모전 글쓰기"
+        }
     }
 
     private fun isCheck(){

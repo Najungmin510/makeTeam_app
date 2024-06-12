@@ -1,5 +1,7 @@
 package com.example.maketeam_app.view.board.write
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,12 +17,14 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.base.BaseFragment
 import com.example.maketeam_app.databinding.FragmentWriteNewBoardDetailBinding
 import com.example.maketeam_app.model.Position
 import com.github.mikephil.charting.charts.BarChart
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
 
 @AndroidEntryPoint
 class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetailBinding>(R.layout.fragment_write_new_board_detail) {
@@ -29,9 +33,13 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
     private val positionList = mutableListOf<LinearLayout>()
 
     override fun initView() {
-        binding.headerWriteNewBoardDetail.textHeaderTitle.text = "글쓰기"
+        if(args.category == 0){
+            binding.headerWriteNewBoardDetail.textHeaderTitle.text = "교내 글쓰기"
+        } else {
+            binding.headerWriteNewBoardDetail.textHeaderTitle.text = "공모전 글쓰기"
+        }
         binding.headerWriteNewBoardDetail.btnWriteDetailSetting.visibility = View.INVISIBLE
-
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 
     override fun initClick() {
@@ -45,6 +53,8 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
         binding.btnGoFinalCheckPage.setOnClickListener {
             previewPage()
         }
+
+        setDate()
 
     }
 
@@ -84,6 +94,23 @@ class fragment_write_new_board_detail : BaseFragment<FragmentWriteNewBoardDetail
             }
         }
         return position
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun setDate(){
+        binding.groupWriteDeadline.etDate.setOnClickListener {
+            var calendar = Calendar.getInstance()
+            var year = calendar.get(Calendar.YEAR)
+            var month = calendar.get(Calendar.MONTH)
+            var day = calendar.get(Calendar.DAY_OF_MONTH)
+            context?.let { it1 ->
+                DatePickerDialog(it1, { _, year, month, day ->
+                    run {
+                        binding.groupWriteDeadline.etDate.setText(year.toString() + "." + (month + 1).toString() + "." + day.toString())
+                    }
+                }, year, month, day)
+            }?.show()
+        }
     }
 
 

@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
@@ -29,25 +31,29 @@ class fragment_board_apply_to_group : BaseFragment<FragmentBoardApplyToGroupBind
     private val args : fragment_board_apply_to_groupArgs by navArgs()
     private val vm : ViewModel by activityViewModels()
     private var ischeck = false
-    private lateinit var progressBar: ProgressBar
+
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
-        settingApplyPosition()
-        //settingProgress()
+        (requireActivity() as MainActivity).noShowToolbar()
+        settingData()
     }
 
     override fun initClick() {
         apply()
         chatBotUse()
+
+        binding.groupApplyButton.btnSendApply.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_board_apply_to_group_to_home_fragment_school_main)
+            Toast.makeText(requireContext(), "지원을 완료했어요.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     /**
      * 포지션 체크박스 생성
      * */
     @SuppressLint("SetTextI18n")
-    private fun settingApplyPosition(){
+    private fun settingData(){
         lifecycleScope.launch(Dispatchers.IO){
             val data = vm.getDetailBoard(args.clickId)
 
@@ -57,6 +63,7 @@ class fragment_board_apply_to_group : BaseFragment<FragmentBoardApplyToGroupBind
 
                 if(positions != null){
                     val layoutPosition = binding.groupSelectMyPosition.layoutSelectMyPosition
+
                     val guideNoPosition = layoutPosition.findViewById<TextView>(R.id.text_position_no_apply)
                     guideNoPosition.visibility = View.GONE
 
@@ -75,6 +82,11 @@ class fragment_board_apply_to_group : BaseFragment<FragmentBoardApplyToGroupBind
                         layoutPosition.addView(addPosition)
                     }
                 }
+
+                binding.groupMyInfo.applyDetailTitle.text = data.title
+                binding.headerApplyToGroup.btnBackX.visibility = View.INVISIBLE
+                binding.headerApplyToGroup.textHeaderTitle.text = "지원하기"
+                binding.headerApplyToGroup.btnWriteDetailSetting.visibility = View.INVISIBLE
             }
         }
 

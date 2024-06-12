@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.activityViewModels
@@ -35,9 +36,11 @@ class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.
     private val LOG = "boardDetail"
     private val vm : ViewModel by activityViewModels()
     private val args : fragment_board_detailArgs by navArgs()
+
     override fun initView() {
         settingTitle()
         settingDetail()
+        (requireActivity() as MainActivity).noShowToolbar()
         initChartSetting(binding.groupBoardChart.chartApplyPeople)
         initChartDataSetting(binding.groupBoardChart.chartApplyPeople)
     }
@@ -68,14 +71,33 @@ class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.
                 binding.groupBoardContent.teamLookTitleDetail.text = data.title
                 binding.groupBoardContent.boardDetailContent.text = data.content
 
-                if (!data.deadline.isNullOrEmpty()) binding.groupBoardContent.textTeamDateDetailDeadline.text =
-                    data.deadline
+                if (!data.deadline.isNullOrEmpty()) binding.groupBoardContent.textTeamDateDetailDeadline.text = data.deadline
 
-                if (!data.siteLink.isNullOrEmpty()) binding.groupBoardContent.textUri.text =
-                    data.siteLink
+                if (!data.siteLink.isNullOrEmpty()) binding.groupBoardContent.textUri.text = data.siteLink
                 else binding.groupBoardContent.textUri.autoLinkMask = 0
 
                 binding.groupBoardContent.teamDateDetail.text = data.writeDay
+
+                if(data.isEnd){
+                    binding.groupBoardContent.teamSituationDetail.text = "모집완료"
+                    binding.groupBoardContent.teamSituationDetail.setBackgroundResource(R.drawable.background_looking_for_team_close)
+                    binding.groupBoardContent.teamSituationDetail.setTextColor(ContextCompat.getColor(requireContext(), R.color.main_color))
+
+                    binding.btnApplyTeam.setBackgroundResource(R.drawable.background_btn_border_gray_upgrade)
+                    binding.btnApplyTeam.text = "모집이 완료된 게시글이에요."
+                    binding.btnApplyTeam.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_gray_blue))
+                    binding.btnApplyTeam.isClickable = false
+
+                } else {
+                    binding.groupBoardContent.teamSituationDetail.text = "모집중"
+                    binding.groupBoardContent.teamSituationDetail.setBackgroundResource(R.drawable.background_looking_for_team)
+                    binding.groupBoardContent.teamSituationDetail.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_green))
+
+                    binding.btnApplyTeam.setBackgroundResource(R.drawable.background_btn_red)
+                    binding.btnApplyTeam.text = "지원하기"
+                    binding.btnApplyTeam.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                    binding.btnApplyTeam.isClickable = true
+                }
 
                 val positions = data.position
                 val inflater = LayoutInflater.from(requireContext())
@@ -111,6 +133,9 @@ class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.
         barChart.setDrawGridBackground(false)//차트 격자구조 없음
         barChart.setDrawBarShadow(false)//차트 그림자 없음
         barChart.setDrawBorders(false)//차트 테두리 없음
+        barChart.description.isEnabled = false
+        barChart.isEnabled = false
+        barChart.legend.isEnabled = false
 
         val xAxis : XAxis = barChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
@@ -119,9 +144,11 @@ class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.
 
         val leftAxis : YAxis = barChart.axisLeft
         leftAxis.setDrawAxisLine(false)
+        leftAxis.isEnabled = false
 
         val rightAxis : YAxis = barChart.axisRight
         rightAxis.setDrawAxisLine(false)
+        rightAxis.isEnabled = false
 
         barChart.animateY(1000)
         barChart.animateX(1000)

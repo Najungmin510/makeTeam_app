@@ -16,6 +16,7 @@ data class BoardContent(
     val deadline : String?, //마감일자
     val siteLink : String?, //사이트 링크
     val position : List<Position>?, //구인 포지션
+    val isEnd : Boolean = false, //모집중 = false, 모집완료 = true
 ){
     @PrimaryKey(autoGenerate = true)
     var id : Long = 0

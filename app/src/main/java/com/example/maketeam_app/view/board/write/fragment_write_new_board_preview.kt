@@ -15,6 +15,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.access.ViewModel
 import com.example.maketeam_app.base.BaseFragment
@@ -43,7 +44,7 @@ class fragment_write_new_board_preview : BaseFragment<FragmentWriteNewBoardPrevi
     override fun initView() {
         binding.headerWriteNewBoardPreview.btnWriteDetailSetting.visibility = View.INVISIBLE
         binding.headerWriteNewBoardPreview.textHeaderTitle.text = "글쓰기"
-
+        (requireActivity() as MainActivity).noShowToolbar()
         settingPreview()
     }
 

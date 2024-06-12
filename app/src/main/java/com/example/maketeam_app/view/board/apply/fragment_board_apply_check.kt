@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.base.BaseFragment
 import com.example.maketeam_app.databinding.FragmentBoardApplyCheckBinding
@@ -26,12 +27,19 @@ class fragment_board_apply_check : BaseFragment<FragmentBoardApplyCheckBinding>(
                 clickId = args.clickId
                 ))
         }
+        binding.btnNotApply.setOnClickListener {
+            findNavController().navigate(fragment_board_apply_checkDirections
+                .actionFragmentBoardApplyCheckToFragmentBoardDetail(
+                    clickId = args.clickId
+                ))
+        }
     }
 
     private fun settingTitle(){
         binding.headerApplyCheck.btnWriteDetailSetting.visibility = View.INVISIBLE
         binding.headerApplyCheck.btnBackX.setBackgroundResource(R.drawable.btn_back_left)
         binding.headerApplyCheck.textHeaderTitle.text = "지원하기"
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 
 }

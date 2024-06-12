@@ -447,8 +447,9 @@
         android:name="com.example.maketeam_app.view.mypage.ApplytoFragment"
         android:label="Applyto"
         tools:layout="@layout/fragment_applyto" >
+        <action
+            android:id="@+id/action_applyto_fragment_to_mypage_fragment"
+            app:destination="@id/mypage_fragment" />
     </fragment>
-
-
 
 </navigation>

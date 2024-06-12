@@ -59,7 +59,6 @@ class MettingFragment : Fragment() {
     }
 
 
-
     private fun initClick() {
 //        binding.someButton.setOnClickListener {
 //            Toast.makeText(requireContext(), "Button clicked", Toast.LENGTH_SHORT).show()

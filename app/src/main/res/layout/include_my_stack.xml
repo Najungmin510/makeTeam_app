@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/stack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김김김"
+            android:paddingTop="16dp"
+            android:paddingStart="16dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:typeface="@integer/material_motion_duration_long_1"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/stack_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="15dp">
+
+            <TextView
+                android:id="@+id/my_stack_LLM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_round"
+                android:fontFamily="@font/pretendard_regular"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:text="프론트엔드"
+                android:textStyle="bold"
+                android:layout_marginEnd="15dp"
+                android:textColor="#687684"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/my_stack_FastAPI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_round"
+                android:fontFamily="@font/pretendard_regular"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:text="React"
+                android:textStyle="bold"
+                android:layout_marginEnd="15dp"
+                android:textColor="#687684"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/my_stack_Android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_round"
+                android:fontFamily="@font/pretendard_regular"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:text="Next.js"
+                android:textStyle="bold"
+                android:layout_marginEnd="15dp"
+                android:textColor="#687684"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+</LinearLayout>

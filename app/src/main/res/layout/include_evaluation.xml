@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/score_skill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="해당 팀원의 실력은 어땠나요?"
+        android:fontFamily="@font/pretendard_bold"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/score_bar_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/score_bar" />
+
+        <ImageView
+            android:id="@+id/score_point_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/score_point" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/score_community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="해당 팀원의 커뮤니케이션 능력은 어땠나요?"
+        android:fontFamily="@font/pretendard_bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/score_bar_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/score_bar" />
+
+        <ImageView
+            android:id="@+id/score_point_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/score_point" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/score_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="해당 팀원의 일정 관리 능력은 어땠나요?"
+        android:fontFamily="@font/pretendard_bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/score_bar_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/score_bar" />
+
+        <ImageView
+            android:id="@+id/score_point_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/score_point" />
+    </RelativeLayout>
+</LinearLayout>

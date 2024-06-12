@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/project_white"
+        android:orientation="vertical"
+        tools:context=".view.board.write.fragment_write_new_board_preview">
+
+        <include
+            android:id="@+id/list_team_find"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            layout="@layout/include_title"/>
+
+        <include
+            android:id="@+id/list_judment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            layout="@layout/include_my_stack"/>
+
+
+
+        <include
+            android:id="@+id/list_application"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            layout="@layout/include_evaluation"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="완료"
+            android:background="@drawable/background_btn_red"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:layout_marginHorizontal="10dp"/>
+    </LinearLayout>
+</layout>

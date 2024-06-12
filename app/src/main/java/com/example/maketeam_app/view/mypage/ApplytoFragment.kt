@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
@@ -39,6 +40,7 @@ class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_a
     override fun initClick() {
         //apply()
         chatBotUse()
+        goMyPage()
     }
 
     /**
@@ -118,6 +120,14 @@ class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_a
                     dialog.dismiss()
                 }
             }
+        }
+    }
+
+    private fun goMyPage()
+    {
+        binding.groupApplyButton.btnEdit.setOnClickListener()
+        {
+            findNavController().navigate(R.id.action_applyto_fragment_to_mypage_fragment)
         }
     }
 

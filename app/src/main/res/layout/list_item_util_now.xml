@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/list_item_util_now"
     android:orientation="vertical"
     android:background="?android:attr/selectableItemBackground">
 
@@ -18,22 +19,8 @@
             android:maxLines="1"
             android:text="김성우 교수님의 HCI 팀원 찾습니다"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:fontFamily="@font/pretendard_bold"/>
-
-        <TextView
-            android:id="@+id/mozip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/btn_round"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="6dp"
-
-            android:text="프론트엔드"
-            android:textColor="#687684"
-            android:textSize="13sp" />
     </RelativeLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -114,8 +101,58 @@
             android:textSize="14sp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/team_situation_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="프론트엔드"
+            android:textStyle="bold"
+            android:layout_marginEnd="15dp"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/team_situation_detail_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="안드로이드"
+            android:textStyle="bold"
+            android:layout_marginEnd="15dp"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/team_situation_detail_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="백엔드"
+            android:textStyle="bold"
+            android:textColor="#687684"
+            android:textSize="13sp" />
+    </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"/>
 </LinearLayout>

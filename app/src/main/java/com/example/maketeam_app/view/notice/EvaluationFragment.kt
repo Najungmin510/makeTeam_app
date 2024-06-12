@@ -2,32 +2,22 @@ package com.example.maketeam_app.view.notice
 
 import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
 import android.text.SpannableString
+import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.maketeam_app.R
 import com.example.maketeam_app.databinding.FragmentEvaluationBinding
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class EvaluationFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
+
     private var _binding: FragmentEvaluationBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,32 +30,48 @@ class EvaluationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setTextWithColor(binding.listApplication.scoreSkill, "해당 팀원의 실력은 어땠나요?", "실력")
-        setTextWithColor(binding.listApplication.scoreCommunity, "해당 팀원의 커뮤니케이션 능력은 어땠나요?", "커뮤니케이션 능력")
-        setTextWithColor(binding.listApplication.scoreSchedule, "해당 팀원의 일정 관리 능력은 어땠나요?", "일정 관리 능력")
+        // Change text color for specific parts
+        setColoredText()
+
+        // Set up button click listener
+        moveNotice()
     }
 
-    private fun setTextWithColor(textView: TextView, fullText: String, targetText: String) {
-        val spannableString = SpannableString(fullText)
-        val start = fullText.indexOf(targetText)
-        val end = start + targetText.length
-        spannableString.setSpan(ForegroundColorSpan(Color.RED), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        textView.text = spannableString
+    private fun setColoredText() {
+        // 첫 번째 TextView: "해당 팀원의 실력은 어땠나요?"에서 "실력" 부분만 빨간색으로 변경
+        val skillText = "해당 팀원의 실력은 어땠나요?"
+        val skillSpannable = SpannableString(skillText)
+        val skillStart = skillText.indexOf("실력")
+        val skillEnd = skillStart + "실력".length
+        skillSpannable.setSpan(ForegroundColorSpan(Color.RED), skillStart, skillEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.listApplication.scoreSkill.text = skillSpannable
+
+        // 두 번째 TextView: "해당 팀원의 커뮤니케이션 능력은 어땠나요?"에서 "커뮤니케이션 능력" 부분만 빨간색으로 변경
+        val communityText = "해당 팀원의 커뮤니케이션 능력은 어땠나요?"
+        val communitySpannable = SpannableString(communityText)
+        val communityStart = communityText.indexOf("커뮤니케이션 능력")
+        val communityEnd = communityStart + "커뮤니케이션 능력".length
+        communitySpannable.setSpan(ForegroundColorSpan(Color.RED), communityStart, communityEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.listApplication.scoreCommunity.text = communitySpannable
+
+        // 세 번째 TextView: "해당 팀원의 일정 관리 능력은 어땠나요?"에서 "팀원의 일정 관리 능력" 부분만 빨간색으로 변경
+        val scheduleText = "해당 팀원의 일정 관리 능력은 어땠나요?"
+        val scheduleSpannable = SpannableString(scheduleText)
+        val scheduleStart = scheduleText.indexOf("팀원의 일정 관리 능력")
+        val scheduleEnd = scheduleStart + "팀원의 일정 관리 능력".length
+        scheduleSpannable.setSpan(ForegroundColorSpan(Color.RED), scheduleStart, scheduleEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.listApplication.scoreSchedule.text = scheduleSpannable
+    }
+
+    private fun moveNotice() {
+        binding.btnSuccess.setOnClickListener {
+            Toast.makeText(requireContext(), "평가를 완료하였습니다.", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_fragment_evaluation_to_fragment_notice)
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EvaluationFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

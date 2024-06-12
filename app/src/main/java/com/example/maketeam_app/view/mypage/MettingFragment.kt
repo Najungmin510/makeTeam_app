@@ -33,7 +33,7 @@ class MettingFragment : Fragment() {
 
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
+        (requireActivity() as MainActivity).noShowToolbar()
 
         initView()
         initClick()

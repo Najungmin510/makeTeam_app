@@ -32,7 +32,7 @@ class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_a
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
-
+        (requireActivity() as MainActivity).noShowToolbar()
         //settingProgress()
     }
 

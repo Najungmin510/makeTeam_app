@@ -4,8 +4,12 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import com.example.maketeam_app.model.BoardContent
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
@@ -26,4 +30,17 @@ class ViewModel @Inject constructor(private val repository: Repository, applicat
     fun getDetailBoard(id : Long) : BoardContent {
         return repository.getDetailBoard(id)
     }
+
+    fun getAllBoard() : LiveData<List<BoardContent>> {
+        return repository.getAllBoard()
+    }
+
+    fun updateBoardApply(id : Long, isEnd : Boolean) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO){
+                repository.updateBoardApply(id, isEnd)
+            }
+        }
+    }
+
 }

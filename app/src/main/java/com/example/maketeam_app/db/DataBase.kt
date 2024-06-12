@@ -7,7 +7,7 @@ import com.example.maketeam_app.converter.DBConverters
 import com.example.maketeam_app.model.BoardContent
 
 
-@Database(entities = [BoardContent::class], version = 1, exportSchema = false)
+@Database(entities = [BoardContent::class], version = 2, exportSchema = false)
 @TypeConverters(DBConverters::class)
 abstract class DataBase : RoomDatabase() {
     abstract fun dbDao() : DBDao

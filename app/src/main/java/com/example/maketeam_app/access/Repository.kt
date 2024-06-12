@@ -23,4 +23,13 @@ class Repository @Inject constructor(private val dbDao : DBDao) {
     fun getDetailBoard(id : Long) : BoardContent {
         return dbDao.getDetail(id)
     }
+
+    fun getAllBoard() : LiveData<List<BoardContent>> {
+        return dbDao.getAllNoSelect()
+    }
+
+    suspend fun updateBoardApply(id: Long, isEnd : Boolean) {
+        dbDao.updateApply(id, isEnd)
+    }
+
 }

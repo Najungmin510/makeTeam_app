@@ -15,7 +15,7 @@ data class BoardContent(
     val writeDay : String, //작성일자
     val deadline : String?, //마감일자
     val siteLink : String?, //사이트 링크
-    val position : List<Position>? //구인 포지션
+    val position : List<Position>?, //구인 포지션
 ){
     @PrimaryKey(autoGenerate = true)
     var id : Long = 0

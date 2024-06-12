@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -29,39 +30,103 @@
                 android:background="@drawable/profile_background"
                 android:scaleType="centerCrop"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/profile_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="이름            김김김"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
-                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/profile_university"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="학교                       한림대학교"
-                    android:textSize="16sp"
-                    android:layout_below="@id/profile_name"
-                    android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이름"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"/>
 
-                <TextView
-                    android:id="@+id/profile_department_student_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="학과(학번)             20195189"
-                    android:textSize="16sp"
-                    android:layout_below="@id/profile_university"
-                    android:layout_marginTop="4dp"/>
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="송태웅"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="학교"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="한림대학교"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/chevron_right"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="학과(학번)"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20195189"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -96,7 +161,7 @@
                     android:text="2"
                     android:textColor="#000000"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="@font/pretendard_bold"/>
 
                 <TextView
                     android:id="@+id/application_status_text"
@@ -104,6 +169,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="지원현황"
+                    android:fontFamily="@font/pretendard_regular"
                     android:textSize="10sp"/>
             </LinearLayout>
 
@@ -124,13 +190,14 @@
                     android:text="3"
                     android:textColor="#000000"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="@font/pretendard_bold"/>
 
                 <TextView
                     android:id="@+id/recent_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
+                    android:fontFamily="@font/pretendard_regular"
                     android:text="초대 받은 내역"
                     android:textSize="10sp"/>
             </LinearLayout>
@@ -150,12 +217,13 @@
                     android:text="0"
                     android:textColor="#000000"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="@font/pretendard_bold"/>
 
                 <TextView
                     android:id="@+id/viewed_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
                     android:text="지원서 열람"
                     android:textColor="#000000"
                     android:textSize="10sp"/>
@@ -176,12 +244,13 @@
                     android:text="4"
                     android:textColor="#000000"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="@font/pretendard_bold"/>
 
                 <TextView
                     android:id="@+id/meeting_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_regular"
                     android:text="만난 팀원"
                     android:textColor="#000000"
                     android:textSize="10sp"/>
@@ -209,13 +278,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="내 스택"
-                android:textSize="18sp"
                 android:textColor="#000000"
-                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:typeface="@integer/material_motion_duration_long_1"
                 android:paddingBottom="8dp"/>
 
             <LinearLayout
                 android:id="@+id/stack_buttons_layout"
+                android:layout_marginStart="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -295,7 +367,7 @@
                 android:textColor="#000000"
                 android:text="깃허브 링크(포폴 링크)"
                 android:textSize="14sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/pretendard_bold"
                 android:paddingTop="8dp"/>
 
             <TextView
@@ -305,7 +377,8 @@
                 android:layout_marginTop="8dp"
                 android:textColor="#0828C8"
                 android:text="https://github.com/Slavicmeme?tab=repositories"
-                android:textSize="14sp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="10sp"
                 android:textStyle="bold"
 
                 android:paddingTop="8dp"/>
@@ -316,17 +389,12 @@
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:background="@color/text_gray_light"
-            />
+            android:background="@color/text_gray_light"/>
 
 
-
-
-
-
-            <!-- 내가 쓴 게시글 -->
+        <!-- 내가 쓴 게시글 -->
             <LinearLayout
-                android:id="@+id/my_posts_layout"
+                android:id="@+id/post_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -337,66 +405,55 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="내가 쓴 게시글"
+                    android:layout_marginBottom="20dp"
                     android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/pretendard_bold"
                     android:paddingBottom="8dp"/>
 
 
 
                 <!-- 게시글 1 -->
 
-                <LinearLayout
-                    android:id="@+id/post_1"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <TextView
-                            android:id="@+id/team_look_title_detail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/pretendard_bold"
-                            android:maxLines="1"
-                            android:text="게시물 제목이 들어갑니다."
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/team_situation_detail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="8dp"
-                            android:background="@drawable/background_looking_for_team"
-                            android:fontFamily="@font/pretendard_regular"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="6dp"
-                            android:text="모집중"
-                            android:textColor="@color/text_green"
-                            android:textSize="13sp" />
-                    </LinearLayout>
+                    android:layout_marginBottom="8dp">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:maxLines="1"
+                        android:text="게시물 제목이 들어갑니다."
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/pretendard_bold"/>
+
+                    <TextView
+                        android:id="@+id/mozip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/background_looking_for_team"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
+                        android:text="모집중"
+                        android:textColor="@color/text_green"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+
+
+                <TextView
                         android:id="@+id/post_author_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="4dp"
                         android:text="홍길동 (프론트엔드) 2022.08.29 14:27"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/pretendard_regular"
                         android:textColor="#000000"
                         android:textSize="12sp" />
 
@@ -405,6 +462,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="8dp"
+                        android:fontFamily="@font/pretendard_regular"
                         android:text="팀원을 모으는 서비스를 주제로 HCI수업에서 함께할 학우를 찾습니다! 더보기"
                         android:textColor="#000000"
                         android:textSize="14sp" />
@@ -424,9 +482,10 @@
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="6dp"
                             android:text="프론트엔드 (3)"
+                            android:textStyle="bold"
                             android:textColor="#687684"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -437,9 +496,10 @@
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="6dp"
                             android:text="백엔드 (3)"
+                            android:textStyle="bold"
                             android:textColor="#687684"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -450,9 +510,10 @@
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="6dp"
                             android:text="기획자 (1)"
+                            android:textStyle="bold"
                             android:textColor="#687684"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                             />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -470,51 +531,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp"
+
                     android:layout_marginBottom="8dp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
+                        android:layout_marginBottom="8dp"
+                        >
 
                         <TextView
-                            android:id="@+id/team_look_title_detail_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/pretendard_bold"
+                            android:layout_alignParentStart="true"
                             android:maxLines="1"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginRight="30dp"
                             android:text="게시물 제목이 들어갑니다."
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"
+                            android:fontFamily="@font/pretendard_bold"/>
 
                         <TextView
-                            android:id="@+id/team_situation_detail_2"
+                            android:id="@+id/mozip2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_alignParentEnd="true"
                             android:background="@drawable/background_looking_for_team"
                             android:fontFamily="@font/pretendard_regular"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="6dp"
-                            android:layout_marginBottom="8dp"
                             android:text="모집중"
                             android:textColor="@color/text_green"
                             android:textSize="13sp" />
-                    </LinearLayout>
+                    </RelativeLayout>
 
                     <TextView
                         android:id="@+id/post_author_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="홍길동 (프론트엔드) 2022.08.29 14:27"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textStyle="bold"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:paddingTop="4dp"/>
@@ -523,6 +579,7 @@
                         android:id="@+id/post_content_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_regular"
                         android:text="팀원을 모으는 서비스를 주제로 HCI수업에서 함께할 학우를 찾습니다! 더보기"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -584,5 +641,4 @@
                     android:background="@color/text_gray_light"
                     />
             </LinearLayout>
-    </LinearLayout>
 </ScrollView>

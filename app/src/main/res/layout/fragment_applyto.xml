@@ -5,9 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:id="@+id/layout_apply_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/project_white">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header_apply_to_group"
+            android:layout_marginBottom="10dp"
+            layout="@layout/include_header"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -22,18 +31,27 @@
                 android:orientation="vertical">
 
                 <include
+                    android:id="@+id/group_my_info"
                     layout="@layout/include_board_apply_myinfo"/>
 
                 <include
-                    layout="@layout/include_board_apply_myposition"/>
+                    android:id="@+id/group_select_my_position"
+                    layout="@layout/include_applyto_mystack"/>
+
+
 
                 <include
+                    android:id="@+id/group_write_my_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     layout="@layout/include_board_apply_mymessage"/>
 
             </LinearLayout>
         </ScrollView>
 
         <include
+            android:id="@+id/group_apply_button"
             layout="@layout/include_board_applyto_send_btn"/>
 
     </LinearLayout>

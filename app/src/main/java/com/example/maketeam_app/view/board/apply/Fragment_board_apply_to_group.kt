@@ -20,7 +20,6 @@ import com.example.maketeam_app.base.BaseFragment
 import com.example.maketeam_app.base.BaseProgressDialog
 import com.example.maketeam_app.databinding.FragmentBoardApplyToGroupBinding
 import com.example.maketeam_app.openai.GPTURL
-import com.github.ybq.android.spinkit.style.DoubleBounce
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

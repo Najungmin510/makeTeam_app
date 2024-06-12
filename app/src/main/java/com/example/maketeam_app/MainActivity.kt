@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.bottomNav.itemIconTintList = null
-
+        binding.mainToolbar.visibility = View.VISIBLE
 
         navControllerSetting()
         tabLayoutSetting()
-
+        searchSetting()
 
         //val hash = Utility.getKeyHash(this)
         //Log.d("Hash", hash)
@@ -64,8 +64,14 @@ class MainActivity : AppCompatActivity() {
         binding.tabLayoutMain.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab!!.position){
-                    0 -> navController.navigate(R.id.home_fragment_school_main)
-                    1 -> navController.navigate(R.id.home_fragment_contest_main)
+                    0 -> {
+                        navController.navigate(R.id.home_fragment_school_main)
+                        showToolbar()
+                    }
+                    1 -> {
+                        navController.navigate(R.id.home_fragment_contest_main)
+                        showToolbar()
+                    }
                 }
             }
 
@@ -79,6 +85,12 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+    }
+
+    private fun searchSetting(){
+        binding.btnSearch.setOnClickListener {
+            binding.logo.visibility = View.GONE
+        }
     }
 
 
@@ -101,5 +113,14 @@ class MainActivity : AppCompatActivity() {
 
     fun showTabLayout(){
         binding.tabLayoutMain.visibility = View.VISIBLE
+    }
+
+    fun showToolbar(){
+        Log.d("main1231", "툴바보여주기")
+        binding.mainToolbar.visibility = View.VISIBLE
+    }
+
+    fun noShowToolbar(){
+        binding.mainToolbar.visibility = View.GONE
     }
 }

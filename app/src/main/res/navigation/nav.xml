@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_fragment_membership_setting_school_to_fragment_membership_setting_sch_inform"
             app:destination="@id/fragment_membership_setting_sch_inform" />
+        <action
+            android:id="@+id/action_fragment_membership_setting_school_to_fragment_membership_setting_name"
+            app:destination="@id/fragment_membership_setting_name" />
     </fragment>
 
     <fragment
@@ -39,6 +42,9 @@
         <action
             android:id="@+id/action_fragment_membership_setting_sch_inform_to_fragment_membership_success"
             app:destination="@id/fragment_membership_success" />
+        <action
+            android:id="@+id/action_fragment_membership_setting_sch_inform_to_fragment_membership_setting_school"
+            app:destination="@id/fragment_membership_setting_school" />
     </fragment>
 
     <fragment
@@ -48,6 +54,9 @@
         <action
             android:id="@+id/action_fragment_membership_success_to_home_fragment_school_main"
             app:destination="@id/home_fragment_school_main" />
+        <action
+            android:id="@+id/action_fragment_membership_success_to_fragment_membership_setting_sch_inform"
+            app:destination="@id/fragment_membership_setting_sch_inform" />
     </fragment>
 
     <fragment
@@ -380,12 +389,18 @@
             android:name="clickId"
             app:argType="long"
             android:defaultValue="0L"/>
+        <action
+            android:id="@+id/action_fragment_board_apply_check_to_fragment_board_detail"
+            app:destination="@id/fragment_board_detail" />
     </fragment>
 
     <fragment
         android:id="@+id/fragment_board_apply_to_group"
         android:name="com.example.maketeam_app.view.board.apply.fragment_board_apply_to_group"
         android:label="fragment_board_apply_to_group">
+        <action
+            android:id="@+id/action_fragment_board_apply_to_group_to_home_fragment_school_main"
+            app:destination="@id/home_fragment_school_main" />
         <argument
             android:name="category"
             app:argType="integer"

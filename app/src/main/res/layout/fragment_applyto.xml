@@ -38,8 +38,6 @@
                     android:id="@+id/group_select_my_position"
                     layout="@layout/include_applyto_mystack"/>
 
-
-
                 <include
                     android:id="@+id/group_write_my_message"
                     android:layout_width="match_parent"

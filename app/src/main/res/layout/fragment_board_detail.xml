@@ -21,6 +21,7 @@
         android:text="지원하기"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:paddingVertical="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -36,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_apply_team"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,18 +53,18 @@
                 layout="@layout/include_board_detail_content" />
 
             <include
+                android:id="@+id/group_board_position"
+                layout="@layout/include_board_detail_position"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/group_board_position"
-                layout="@layout/include_board_detail_position" />
+                android:layout_marginBottom="20dp" />
 
             <include
+                android:id="@+id/group_board_chart"
+                layout="@layout/include_board_detail_position_chart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/group_board_chart"
-                layout="@layout/include_board_detail_position_chart" />
+                android:layout_marginBottom="20dp" />
 
         </LinearLayout>
     </ScrollView>

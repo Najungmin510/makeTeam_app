@@ -12,9 +12,9 @@
         android:background="@color/project_white">
 
         <include
+            android:id="@+id/header_apply_to_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/header_apply_to_group"
             android:layout_marginBottom="10dp"
             layout="@layout/include_header"/>
 
@@ -32,14 +32,23 @@
 
                 <include
                     android:id="@+id/group_my_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     layout="@layout/include_board_apply_myinfo"/>
 
                 <include
                     android:id="@+id/group_select_my_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     layout="@layout/include_board_apply_myposition"/>
 
                 <include
                     android:id="@+id/group_my_portfolio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
                     layout="@layout/include_board_apply_mylink"/>
 
                 <include

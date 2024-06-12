@@ -21,5 +21,6 @@
     <color name="background_light_gray">#E8E8E8</color>
 
     <!--텍스트 배경 색-->
-    <color name = "background_text_gray">#81EBEBEB</color>
+    <color name = "background_text_gray">#F4F4F4</color>
+    <color name = "background_text_gray_light">#F5FAFAFA</color>
 </resources>

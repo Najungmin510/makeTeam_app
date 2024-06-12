@@ -2,7 +2,6 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MakeTeam_app" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@color/black</item>
     </style>
 
@@ -25,8 +24,15 @@
     </style>
 
     <!--탭 바 부분-->
-
     <style name="tabLayout" parent="TextAppearance.Design.Tab">
         <item name="android:fontFamily">@font/pretendard_bold</item>
     </style>
+
+    <!--검색 창 부분-->
+    <style name="searchViewStyle" parent="Theme.MakeTeam_app">
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+    </style>
+
+
 </resources>

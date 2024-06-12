@@ -60,6 +60,8 @@ class fragment_membership_setting_name :
         }
         binding.headerSettingName.textHeaderTitle.text = "회원가입"
         binding.headerSettingName.btnWriteDetailSetting.visibility = View.INVISIBLE
+
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 
 }

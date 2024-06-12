@@ -30,5 +30,6 @@ class fragment_membership_success : BaseFragment<FragmentMembershipSuccessBindin
         binding.headerSuccess.btnBackX.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_membership_success_to_fragment_membership_setting_sch_inform)
         }
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 }

@@ -47,8 +47,8 @@ class fragment_membership_setting_sch_inform : BaseFragment<FragmentMembershipSe
                 number = if(binding.etUserNum.text.toString().isEmpty()){
                     binding.etLayoutUserNum.error ="값을 입력해주세요."
                     false
-                } else if(binding.etUserNum.text.toString().length < 8){
-                    binding.etLayoutUserNum.error ="학번은 8자리로 입력해주세요."
+                } else if(binding.etUserNum.text.toString().length < 8 || binding.etUserNum.text.toString().length > 8){
+                    binding.etLayoutUserNum.error = "${binding.etUserNum.text.toString().length}/8"
                     false
                 } else {
                     binding.etLayoutUserNum.error = null
@@ -112,6 +112,7 @@ class fragment_membership_setting_sch_inform : BaseFragment<FragmentMembershipSe
             findNavController().navigate(R.id.action_fragment_membership_setting_sch_inform_to_fragment_membership_setting_school)
         }
         binding.headerSchInform.btnWriteDetailSetting.visibility = View.INVISIBLE
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 
 }

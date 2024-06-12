@@ -74,6 +74,7 @@ class fragment_membership_setting_school : BaseFragment<FragmentMembershipSettin
         binding.headerSettingSchool.btnBackX.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_membership_setting_school_to_fragment_membership_setting_name)
         }
+        (requireActivity() as MainActivity).noShowToolbar()
     }
 
 }

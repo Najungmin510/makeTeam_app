@@ -1,11 +1,8 @@
 package com.example.maketeam_app.view.home
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -14,19 +11,18 @@ import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.access.ViewModel
 import com.example.maketeam_app.base.BaseFragment
-import com.example.maketeam_app.databinding.FragmentHomeContentMainBinding
+import com.example.maketeam_app.databinding.FragmentHomeContestMainBinding
 import com.example.maketeam_app.view.adapter.BoardAdapter
 import com.example.maketeam_app.view.adapter.ItemClick
-import com.example.maketeam_app.view.board.fragment_board_detail
 
-class home_fragment_contest_main : BaseFragment<FragmentHomeContentMainBinding>(R.layout.fragment_home_content_main) {
+class home_fragment_contest_main : BaseFragment<FragmentHomeContestMainBinding>(R.layout.fragment_home_contest_main) {
 
     private val vm : ViewModel by activityViewModels()
     private val LOG = "contestMain"
     override fun initView() {
         (requireActivity() as MainActivity).showNavigation()
         (requireActivity() as MainActivity).showTabLayout()
-
+        (requireActivity() as MainActivity).showToolbar()
         settingData()
     }
 
@@ -51,6 +47,10 @@ class home_fragment_contest_main : BaseFragment<FragmentHomeContentMainBinding>(
                     ))
 
             } //clickboard
+
+            override fun clickApplyEnd(id: Long, isEnd: Boolean) {
+
+            }
         })
 
         binding.recyclerViewContent.adapter = adapter
@@ -58,6 +58,12 @@ class home_fragment_contest_main : BaseFragment<FragmentHomeContentMainBinding>(
 
         vm.getBoard(1).observe(this, Observer {
             adapter.setData(it)
+
+            if(it.isEmpty()){
+                binding.imageNoDataContest.visibility = View.VISIBLE
+            } else {
+                binding.imageNoDataContest.visibility = View.GONE
+            }
         })
     }
 

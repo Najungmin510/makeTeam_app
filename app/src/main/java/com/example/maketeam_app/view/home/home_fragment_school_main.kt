@@ -3,6 +3,7 @@ package com.example.maketeam_app.view.home
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -25,7 +26,7 @@ class home_fragment_school_main : BaseFragment<FragmentHomeMainBinding>(R.layout
     override fun initView() {
         (requireActivity() as MainActivity).showNavigation()
         (requireActivity() as MainActivity).showTabLayout()
-
+        (requireActivity() as MainActivity).showToolbar()
         settingData()
 
     }
@@ -60,6 +61,11 @@ class home_fragment_school_main : BaseFragment<FragmentHomeMainBinding>(R.layout
 //                ).commit()
 
             } //clickboard
+
+            override fun clickApplyEnd(id: Long, isEnd: Boolean) {
+
+            }
+
         })
 
         binding.recyclerViewSchool.adapter = adapter
@@ -67,7 +73,14 @@ class home_fragment_school_main : BaseFragment<FragmentHomeMainBinding>(R.layout
 
         vm.getBoard(0).observe(this, Observer {
             adapter.setData(it)
+
+            if(it.isEmpty()){
+                binding.imageNoDataHome.visibility = View.VISIBLE
+            } else {
+                binding.imageNoDataHome.visibility = View.GONE
+            }
         })
+
     }
 
 }

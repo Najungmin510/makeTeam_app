@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.mypage.fragment_show_apply_user">
+
+    <include
+        android:id="@+id/header_show_apply_user"
+        layout="@layout/include_header"/>
+
+    <include
+        android:id="@+id/btn_show_user_apply_document"
+        layout="@layout/row_apply_user"/>
+
+</LinearLayout>
+</layout>

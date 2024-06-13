@@ -9,10 +9,10 @@
     android:paddingTop="30dp">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/text_check_apply_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_checkbox_yes"
+        android:drawableStart="@drawable/ic_checkbox_no"
         android:drawablePadding="10dp"
         android:fontFamily="@font/pretendard_regular"
         android:gravity="center"

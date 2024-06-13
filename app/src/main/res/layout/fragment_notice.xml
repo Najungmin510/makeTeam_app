@@ -18,6 +18,13 @@
             android:paddingBottom="16dp">
 
             <include
+                android:id="@+id/header_notice"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+
+            <include
                 android:id="@+id/list_team_find"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -10,8 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/stack_title"
@@ -31,7 +30,7 @@
             android:id="@+id/stack_buttons_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
+
             android:orientation="horizontal"
             android:layout_marginBottom="20dp"
             android:layout_marginStart="15dp">
@@ -82,6 +81,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="@color/background_text_gray"/>
     </LinearLayout>
 </LinearLayout>

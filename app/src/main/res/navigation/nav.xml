@@ -459,12 +459,15 @@
 
     <fragment
         android:id="@+id/applyto_fragment"
-        android:name="com.example.maketeam_app.view.mypage.ApplytoFragment"
+        android:name="com.example.maketeam_app.view.mypage.fragment_check_apply_board"
         android:label="Applyto"
-        tools:layout="@layout/fragment_applyto" >
+        tools:layout="@layout/fragment_check_apply_board" >
         <action
             android:id="@+id/action_applyto_fragment_to_mypage_fragment"
             app:destination="@id/mypage_fragment" />
+        <action
+            android:id="@+id/action_applyto_fragment_to_fragment_show_apply_user"
+            app:destination="@id/fragment_show_apply_user" />
     </fragment>
 
     <fragment
@@ -496,5 +499,17 @@
             android:id="@+id/action_fragment_until_now_to_fragment_evaluation"
             app:destination="@id/fragment_evaluation" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_show_apply_user"
+        android:name="com.example.maketeam_app.view.mypage.fragment_show_apply_user"
+        android:label="fragment_show_apply_user" >
+        <action
+            android:id="@+id/action_fragment_show_apply_user_to_fragment_apply_user_document"
+            app:destination="@id/fragment_apply_user_document" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_apply_user_document"
+        android:name="com.example.maketeam_app.view.mypage.fragment_apply_user_document"
+        android:label="fragment_apply_user_document" />
 
 </navigation>

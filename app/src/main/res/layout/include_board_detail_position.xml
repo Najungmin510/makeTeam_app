@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_regular"
             android:textSize="16sp"
-            android:text="등록한 포지션 내용이 없습니다."/>
+            android:text="등록된 포지션 내용이 없어요."/>
     </LinearLayout>
 
     <View

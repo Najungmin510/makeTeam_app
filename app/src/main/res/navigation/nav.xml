@@ -462,8 +462,39 @@
         android:name="com.example.maketeam_app.view.mypage.ApplytoFragment"
         android:label="Applyto"
         tools:layout="@layout/fragment_applyto" >
+        <action
+            android:id="@+id/action_applyto_fragment_to_mypage_fragment"
+            app:destination="@id/mypage_fragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/fragment_evaluation"
+        android:name="com.example.maketeam_app.view.notice.EvaluationFragment"
+        android:label="Evaluation"
+        tools:layout="@layout/fragment_evaluation">
+        <action
+            android:id="@+id/action_fragment_evaluation_to_fragment_notice"
+            app:destination="@id/fragment_notice" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragment_notice"
+        android:name="com.example.maketeam_app.view.notice.NoticeFragment"
+        android:label="Notice"
+        tools:layout="@layout/fragment_notice" >
+        <action
+            android:id="@+id/action_fragment_notice_to_fragment_until_now"
+            app:destination="@id/fragment_until_now" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_until_now"
+        android:name="com.example.maketeam_app.view.notice.UntilNowFragment"
+        android:label="Untilnow"
+        tools:layout="@layout/fragment_until_now" >
+        <action
+            android:id="@+id/action_fragment_until_now_to_fragment_evaluation"
+            app:destination="@id/fragment_evaluation" />
+    </fragment>
 
 </navigation>

@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
@@ -39,6 +41,7 @@ class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_a
     override fun initClick() {
         //apply()
         chatBotUse()
+        goMyPage()
     }
 
     /**
@@ -118,6 +121,16 @@ class ApplytoFragment : BaseFragment<FragmentApplytoBinding>(R.layout.fragment_a
                     dialog.dismiss()
                 }
             }
+        }
+    }
+
+    private fun goMyPage()
+    {
+        binding.groupApplyButton.btnEdit.setOnClickListener()
+        {
+
+            Toast.makeText(requireContext(), "수정이 완료되었습니다.", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_applyto_fragment_to_mypage_fragment)
         }
     }
 

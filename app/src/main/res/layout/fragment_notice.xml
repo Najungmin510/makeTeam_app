@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/project_white"
+        tools:context=".view.board.write.fragment_write_new_board_preview">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/project_white"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <include
+                android:id="@+id/list_team_find"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                layout="@layout/list_item_notice"/>
+
+            <include
+                android:id="@+id/list_judment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                layout="@layout/list_item_notice_find"/>
+
+            <include
+                android:id="@+id/list_application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                layout="@layout/list_item_application"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

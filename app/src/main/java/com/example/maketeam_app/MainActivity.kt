@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.home_fragment_school_main)
                 }
 
+                R.id.notice -> {
+                    navController.navigate(R.id.fragment_notice)
+                }
+
                 R.id.mypage -> {
                     navController.navigate(R.id.mypage_fragment)
                 }

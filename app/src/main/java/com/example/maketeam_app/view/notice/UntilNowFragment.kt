@@ -27,6 +27,7 @@ class UntilNowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         moveEvaluation()
+        settingBar()
     }
 
     private fun moveEvaluation()
@@ -45,6 +46,11 @@ class UntilNowFragment : Fragment() {
         {
             findNavController().navigate(R.id.action_fragment_until_now_to_fragment_evaluation)
         }
+    }
+
+    private fun settingBar(){
+        binding.headerUnitl.textHeaderTitle.text = "지금까지 만난 팀원"
+        binding.headerUnitl.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
     override fun onDestroyView() {

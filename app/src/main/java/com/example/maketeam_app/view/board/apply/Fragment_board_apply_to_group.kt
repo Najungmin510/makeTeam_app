@@ -31,7 +31,7 @@ class fragment_board_apply_to_group : BaseFragment<FragmentBoardApplyToGroupBind
     private val args : fragment_board_apply_to_groupArgs by navArgs()
     private val vm : ViewModel by activityViewModels()
     private var ischeck = false
-
+    private var ischeck2 = false
     override fun initView() {
         (requireActivity() as MainActivity).noShowNavigation()
         (requireActivity() as MainActivity).noShowTabLayout()
@@ -100,6 +100,18 @@ class fragment_board_apply_to_group : BaseFragment<FragmentBoardApplyToGroupBind
                 true
             } else {
                 binding.groupApplyButton.textPushAlarm
+                    .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_checkbox_no,0,0,0)
+                false
+            }
+        }
+
+        binding.groupApplyButton.textCheckApplyContent.setOnClickListener {
+            ischeck2 = if(!ischeck2){
+                binding.groupApplyButton.textCheckApplyContent
+                    .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_checkbox_yes,0,0,0)
+                true
+            } else {
+                binding.groupApplyButton.textCheckApplyContent
                     .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_checkbox_no,0,0,0)
                 false
             }

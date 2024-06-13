@@ -16,6 +16,13 @@
             tools:context=".view.board.write.fragment_write_new_board_preview">
 
             <include
+                android:id="@+id/header_unitl"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+
+            <include
                 android:id="@+id/util_meet1"
                 layout="@layout/list_item_util_now"
                 android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.databinding.FragmentNoticeBinding
 
@@ -26,6 +27,10 @@ class NoticeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         moveUntilNow()
+
+        (requireActivity() as MainActivity).noShowTabLayout()
+        (requireActivity() as MainActivity).noShowToolbar()
+        settingBar()
     }
 
     private fun moveUntilNow()
@@ -44,6 +49,12 @@ class NoticeFragment : Fragment() {
         {
             findNavController().navigate(R.id.action_fragment_notice_to_fragment_until_now)
         }
+    }
+
+    private fun settingBar(){
+        binding.headerNotice.btnBackX.visibility = View.INVISIBLE
+        binding.headerNotice.textHeaderTitle.text = "알림"
+        binding.headerNotice.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
     override fun onDestroyView() {

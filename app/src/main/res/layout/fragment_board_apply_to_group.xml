@@ -53,10 +53,10 @@
 
                 <include
                     android:id="@+id/group_write_my_message"
+                    layout="@layout/include_board_apply_mymessage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    layout="@layout/include_board_apply_mymessage"/>
+                    android:layout_marginBottom="10dp" />
 
             </LinearLayout>
         </ScrollView>

@@ -41,6 +41,9 @@ class MettingFragment : Fragment() {
 
     private fun initView() {
         initAdapter()
+
+        binding.headerMetting.textHeaderTitle.text = "지금까지 만난 팀원"
+        binding.headerMetting.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
     private fun initAdapter()
@@ -49,9 +52,9 @@ class MettingFragment : Fragment() {
         listView = binding.listView
         teamMembers = listOf(
             TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "송태웅", "한림대학교", "20195189"),
-            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "김김김", "한림대학교", "20240000"),
-            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "김김김", "한림대학교", "20240000"),
-            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "김김김", "한림대학교", "20240000")
+            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "김민주", "한림대학교", "20244862"),
+            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "박혜선", "한림대학교", "20231112"),
+            TeamMember("김성우 교수님의 HCI 팀원 찾습니다", "김훈", "한림대학교", "20205568")
 
         )
         val adapter = TeamAdapter(requireContext(), teamMembers)

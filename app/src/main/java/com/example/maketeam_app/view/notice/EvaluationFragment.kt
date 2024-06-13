@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.maketeam_app.MainActivity
 import com.example.maketeam_app.R
 import com.example.maketeam_app.databinding.FragmentEvaluationBinding
 
@@ -35,6 +36,10 @@ class EvaluationFragment : Fragment() {
 
         // Set up button click listener
         moveNotice()
+
+        (requireActivity() as MainActivity).noShowToolbar()
+        (requireActivity() as MainActivity).noShowTabLayout()
+        settingBar()
     }
 
     private fun setColoredText() {
@@ -68,6 +73,11 @@ class EvaluationFragment : Fragment() {
             Toast.makeText(requireContext(), "평가를 완료하였습니다.", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_fragment_evaluation_to_fragment_notice)
         }
+    }
+
+    private fun settingBar(){
+        binding.headerEvaluation.textHeaderTitle.text = "팀원평가하기"
+        binding.headerEvaluation.btnWriteDetailSetting.visibility = View.INVISIBLE
     }
 
     override fun onDestroyView() {

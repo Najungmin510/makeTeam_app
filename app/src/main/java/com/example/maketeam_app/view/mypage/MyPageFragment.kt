@@ -32,6 +32,7 @@ class MyPageFragment : Fragment(), DialogInterface {
     private val vm : ViewModel by activityViewModels()
     private var id : Long = 0L
     private var isEnd : Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,6 +46,7 @@ class MyPageFragment : Fragment(), DialogInterface {
 
         (requireActivity() as MainActivity).noShowTabLayout()
         (requireActivity() as MainActivity).noShowToolbar()
+        (requireActivity() as MainActivity).showNavigation()
         binding.headerMyPage.btnBackX.visibility = View.INVISIBLE
         binding.headerMyPage.textHeaderTitle.text = "프로필"
         binding.headerMyPage.btnWriteDetailSetting.visibility = View.INVISIBLE

@@ -1,6 +1,7 @@
 package com.example.maketeam_app.view.board
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -165,7 +166,9 @@ class fragment_board_detail : BaseFragment<FragmentBoardDetailBinding>(R.layout.
         applyList.add(BarEntry(3.0f, 4.0f))
 
         val barDataSet = BarDataSet(applyList, "")
+        barDataSet.setColors(Color.rgb(217, 74, 86),Color.rgb(217, 74, 86), Color.rgb(217, 74, 86) )
         barDataSet.setDrawValues(false)
+
         val data = BarData(barDataSet)
         barChart.data = data
         barChart.invalidate()
